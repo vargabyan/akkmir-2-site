@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="690509e6-74b0-4c89-8253-820bf504454a" name="akkmir-2-site">
+        <fileTransfer rootFolder="/home/c84317/akkmir-2-site.vm-9aa0b6b3.na4u.ru/www" accessType="SFTP" host="h47.netangels.ru" port="22" sshConfigId="039f5311-8907-46de-8152-2e96fbdaf987" sshConfig="c84317@h47.netangels.ru:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
