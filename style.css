@@ -66,7 +66,8 @@ table {
 }
 
 .core-container {
-    max-width: 1680px;
+    /*max-width: 1680px;*/
+    max-width: 1640px;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -302,8 +303,13 @@ table {
 
 
 .banner {
+    max-width: 1680px;
     display: flex;
     gap: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .banner-swiper-wrapper {
@@ -623,6 +629,7 @@ table {
     text-decoration: none;
 
     color: #343434;
+    font-family: Gilroy;
     font-size: 16px;
     line-height: 140%;
 }
@@ -830,6 +837,436 @@ table {
 }
 
 
+.review-section {
+    margin-top: 100px;
+    display: grid;
+    grid-template-areas:
+            'A C C'
+            'B C C';
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.slider-review_header {
+    grid-area: A;
+}
+
+.slider-review_btn-wrapper {
+    grid-area: B;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.review-slider-section_btn-prev,
+.review-slider-section_btn-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #343434;
+}
+
+.review-slider-section_btn-prev:after,
+.review-slider-section_btn-next:after {
+    display: block;
+    content: '';
+    width: 14px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='24' viewBox='0 0 14 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 23L1 12L13 0.999997' stroke='%23343434'/%3E%3C/svg%3E%0A");
+}
+
+.review-slider-section_btn-prev.swiper-button-disabled,
+.review-slider-section_btn-next.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.review-slider-section_btn-next {
+    transform: rotate(180deg);
+}
+
+.review-slider-section_swiper {
+    grid-area: C;
+    margin-top: 10px;
+    max-width: 1032px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-self: self-end;
+}
+
+.review_item {
+    min-height: 564px;
+    border-radius: 20px;
+    background: #F5F5F5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.review_item_text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.review_item_text {
+    font-family: Gilroy;
+    font-size: 24px;
+    line-height: 34px;
+}
+
+.review_item_text.hidden {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+}
+
+.review_item_btn-more {
+    display: none;
+    border: none;
+    background-color: unset;
+    padding: 0;
+    width: max-content;
+    cursor: pointer;
+
+    color: #8E8E8E;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration-line: underline;
+}
+
+.review_item_btn-more.active {
+    display: block;
+}
+
+.review_item_persson-wrapper {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 15px;
+    border-top: solid 1px #D9D9D9;
+}
+
+.review_item_persson-wrapper img {
+    max-width: 111px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.review_item_persson-wrapper span {;
+    font-family: Gilroy;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+
+.consultation {
+    margin-top: 100px;
+    display: grid;
+    grid-template-areas:
+            'A A A'
+            'B B D'
+            'C C D';
+    gap: 30px;
+    border-radius: 20px;
+    border: 1px solid #C4C4C4;
+    background: #F5F5F5;
+    padding: 40px;
+}
+
+.consultation-header {
+    grid-area: A;
+
+    font-size: clamp(24px, 5vw, 90px);
+    line-height: clamp(60px, 5vw, 110px);
+}
+
+.consultation_subtitle {
+    grid-area: B;
+
+    font-family: Gilroy;
+    font-size: 24px;
+    line-height: 130%;
+}
+
+.consultation_person-wrapper {
+    grid-area: C;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.consultation_person-wrapper img  {
+    max-width: 119px;
+    width: 100%;
+    border-radius: 119px;
+    object-fit: cover;
+}
+
+.consultation_person_data {
+    max-width: 395px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    color: #343434;
+    font-family: Gilroy;
+    font-size: 18px;
+    line-height: 120%;
+}
+
+.consultation_person_data span {
+    font-family: Bicubik;
+    font-size: 24px;
+}
+
+.consultation_form {
+    grid-area: D;
+    margin-top: 43px;
+    max-width: 440px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    gap: 12px;
+}
+
+.consultation_form_label input {
+    width: 100%;
+    display: flex;
+    padding: 24px 28px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    outline: none;
+
+    font-family: Gilroy;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.consultation_form_label input::placeholder {
+    color: #727272;
+}
+
+.consultation_form_btn-submit {
+    margin-top: 14px;
+    min-width: 281px;
+
+    font-family: Bicubik;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.consultation_agreements {
+    font-family: Gilroy;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.consultation_agreements a {
+    color: #343434;
+    text-decoration-line: underline;
+}
+
+
+.slider-team {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.slider-team_swiper {
+    display: flex;
+    align-self: self-end;
+    max-width: 1034px;
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+}
+
+.team_item {
+    border-radius: 20px;
+    border: 1px solid #C4C4C4;
+    overflow: hidden;
+}
+
+.team_item-person_img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: -1px -2px 0 -1px;
+    border-radius: 20px;
+}
+
+.team_item_person-data {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team_item_person-data span {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.team_item_person_job-title {
+    color: #8A8A8A;
+    font-family: Gilroy;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+
+.questions {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.questions_content {
+    display: flex;
+    justify-content: space-between;
+    gap: 39px;
+}
+
+.questions_description {
+    max-width: 751px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    color: #7A7A7A;
+    font-family: Gilroy;
+    font-size: 24px;
+    line-height: 34px;
+}
+
+.questions_btn-more {
+    display: none;
+}
+
+.questions_items-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.questions_item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #F7F7F7;
+}
+
+.questions_item_question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+
+    font-family: Gilroy;
+    font-size: 20px;
+}
+
+.questions_item_question.active {
+    display: flex;
+}
+
+.questions_item_question:after {
+    display: block;
+    content: '';
+    width: 16px;
+    height: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' viewBox='0 0 16 9' fill='none'%3E%3Cpath d='M14.12 6.17205e-07L8 5.56275L1.88 8.21774e-08L-7.4858e-08 1.71255L8 9L16 1.71255L14.12 6.17205e-07Z' fill='%23383838'/%3E%3C/svg%3E");
+}
+
+.questions_item_question.active:after {
+    transform: rotate(180deg);
+}
+
+.questions_item_answer {
+    display: none;
+
+    font-family: Gilroy;
+    font-size: 18px;
+}
+
+.questions_item_answer.active {
+    display: block;
+}
+
+.questions_help-item {
+    border-radius: 20px;
+    border: 1px solid #B8B8B8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.questions_help-item span {
+    font-size: 30px;
+    line-height: 46px;
+}
+
+.questions_help-item_person {
+    margin-top: 58px;
+    max-width: 384px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    color: #757575;
+    font-family: Gilroy;
+    font-size: 18px;
+    line-height: 130%;
+}
+
+.questions_help-item_person img {
+    max-width: 64px;
+    width: 100%;
+    border-radius: 64px;
+    background: lightgray 50% / cover no-repeat;
+}
+
+.questions_help-item_btn-consultation {
+    width: max-content;
+    padding: 0;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+
+    font-family: Bicubik;
+    font-size: 18px;
+    line-height: 130%;
+    text-decoration-line: underline;
+}
+
+
 
 
 
@@ -987,6 +1424,24 @@ table {
     }
 
 
+    .review-section {
+        margin-top: 100px;
+        display: grid;
+        grid-template-areas:
+        'A A'
+        'C C'
+        'B B';
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+
+    .slider-team_swiper {
+        height: clamp(500px, 82vw, 900px);
+    }
+
+
+
     .footer_tel {
         font-size: clamp(28px, 8vw, 90px);
     }
@@ -1081,6 +1536,34 @@ table {
     }
 
 
+    .consultation {
+        grid-template-areas:
+        'A A'
+        'B B'
+        'C C'
+        'D D';
+    }
+
+    .consultation_form {
+        max-width: 100%;
+        justify-self: start;
+    }
+
+
+    .slider-team_swiper {
+        height: clamp(500px, 86vw, 810px);
+    }
+
+
+    .questions_content {
+        flex-direction: column;
+    }
+
+    .questions_description {
+        max-width: 100%;
+    }
+
+
 
     .footer_nav-catalog ul {
         display: grid;
@@ -1103,6 +1586,20 @@ table {
 }
 
 @media (max-width: 768px) {
+    
+    .slider-team.core-container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .slider-team_header {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    .slider-team_swiper {
+        height: 100%;
+    }
 
 }
 
@@ -1175,6 +1672,8 @@ table {
 
     .banner {
         gap: 24px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
 
     .banner-swiper {
@@ -1439,6 +1938,234 @@ table {
     .popular-goods_item_btn-wrapper .btn-invisible-with-basket span {
         display: none;
     }
+
+
+    .review-section {
+        margin-top: 40px;
+        gap: 20px;
+    }
+
+    .slider-review_btn-wrapper {
+        justify-content: center;
+    }
+
+    .review-slider-section_btn-prev,
+    .review-slider-section_btn-next {
+        height: 60px;
+    }
+
+    .review-slider-section_swiper {
+        margin-top: 4px;
+    }
+
+    .review_item {
+        min-height: 361px;
+    }
+
+    .review_item_text {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .review_item_btn-more {
+        font-size: 14px;
+    }
+
+    .review_item_persson-wrapper {
+        align-items: center;
+        justify-content: start;
+    }
+
+    .review_item_persson-wrapper img {
+        max-width: 62px;
+        border-radius: 10px;
+    }
+
+    .review_item_persson-wrapper span {
+        font-size: 14px;
+        line-height: 24px
+    }
+
+
+    .consultation {
+        margin-top: 40px;
+        gap: 12px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .consultation-header {
+        max-width: 320px;
+
+        font-size: 18px;
+        line-height: 29px
+    }
+
+    .consultation_subtitle {
+        grid-area: B;
+
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .consultation_person-wrapper {
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .consultation_person-wrapper img {
+        max-width: 59px;
+        border-radius: 59px;
+    }
+
+    .consultation_person_data {
+        max-width: 218px;
+        gap: 4px;
+
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .consultation_person_data span {
+        font-size: 14px;
+        line-height: 120%
+    }
+
+    .consultation_form {
+        margin-top: 16px;
+    }
+
+    .consultation_form_label input {
+        padding: 18px 14px;
+
+        font-size: 14px;
+    }
+
+    .consultation_form_btn-submit {
+        margin-top: 8px;
+        min-width: 232px;
+
+        font-size: 14px;
+    }
+
+    .consultation_agreements {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+
+    .slider-team {
+        margin-top: 40px;
+        gap: 24px;
+    }
+
+    .slider-team_header {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .team_item_person-data {
+        padding: 14px;
+        gap: 4px;
+    }
+
+    .team_item_person-data span {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .team_item_person_job-title {
+        font-size: 14px;
+        line-height: 18px
+    }
+
+
+    .questions {
+        margin-top: 40px;
+        gap: 24px;
+    }
+
+    .questions_content {
+        gap: 30px;
+    }
+
+    .questions_description {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .questions_description p {
+        display: none;
+    }
+
+    .questions_description p:first-child {
+        display: block;
+    }
+
+    .questions_description p.active {
+        display: block;
+    }
+
+    .questions_btn-more {
+        max-width: max-content;
+        display: block;
+        background-color: unset;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+
+        color: #7A7A7A;
+        font-size: 14px;
+        line-height: 130%;
+        text-decoration-line: underline;
+    }
+
+    .questions_items-wrapper {
+        gap: 12px;
+    }
+
+    .questions_item {
+        padding: 14px;
+    }
+
+    .questions_item_question {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .questions_item_question.active {
+        display: flex;
+    }
+
+    .questions_item_answer {
+        font-size: 14px;
+    }
+
+    .questions_help-item {
+        margin-top: 2px;
+        gap: 15px;
+    }
+
+    .questions_help-item span {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .questions_help-item_person {
+        margin-top: 124px;
+        gap: 10px;
+
+        font-size: 14px;
+    }
+
+    .questions_help-item_person img {
+        max-width: 56px;
+    }
+
+    .questions_help-item_btn-consultation {
+        font-size: 14px;
+    }
+
 
 
 

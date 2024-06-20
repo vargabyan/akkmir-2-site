@@ -7,12 +7,12 @@ new Swiper('[data-banner-swiper]', {
 });
 
 
-new Swiper('[data-often-ordering-in-bulk-swiper]', {
+new Swiper('[data-popular-goods-swiper]', {
     spaceBetween: 20,
     speed: 1000,
     navigation: {
-        nextEl: '[data-often-ordering-in-bulk-swiper-button-next]',
-        prevEl: '[data-often-ordering-in-bulk-swiper-button-prev]',
+        nextEl: '[data-popular-goods-swiper-button-next]',
+        prevEl: '[data-popular-goods-swiper-button-prev]',
     },
     breakpoints: {
         320: {
@@ -27,6 +27,44 @@ new Swiper('[data-often-ordering-in-bulk-swiper]', {
         1440: {
             slidesPerView: 4,
         }
+    }
+});
+
+
+new Swiper('[data-review-swiper]', {
+    spaceBetween: 20,
+    speed: 1000,
+    navigation: {
+        nextEl: '[data-review-swiper-button-next]',
+        prevEl: '[data-review-swiper-button-prev]',
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        992: {
+            slidesPerView: 2,
+        },
+    }
+});
+
+
+new Swiper('[data-team-swiper]', {
+    spaceBetween: 20,
+    speed: 1000,
+    breakpoints: {
+        320: {
+            slidesPerView: 1.5,
+            grid: {
+                rows: 1,
+            }
+        },
+        768: {
+            slidesPerView: 2,
+            grid: {
+                rows: 2,
+            }
+        },
     }
 });
 
@@ -93,3 +131,81 @@ const popularProductInsertAction = () => {
 }
 document.addEventListener('DOMContentLoaded', popularProductInsertAction);
 window.addEventListener('resize', popularProductInsertAction);
+
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-review-item-btn-more]');
+
+    if (btn) {
+        const wrapper = btn.closest('[data-review-item-text-wrapper]');
+        const text = wrapper.querySelector('[data-review-item-text]');
+
+        text.classList.toggle('hidden');
+        btn.textContent =  btn.textContent === 'Читать полностью' ? 'Скрыть' : 'Читать полностью';
+    }
+})
+
+const reviewTextActions = () => {
+    const AllWrapper = document.querySelectorAll('[data-review-item-text-wrapper]');
+
+    AllWrapper.forEach(item => {
+        const btn = item.querySelector('[data-review-item-btn-more]');
+        const text = item.querySelector('[data-review-item-text]');
+
+        setTimeout(() => {
+            btn.classList.remove('active');
+            text.classList.remove('hidden');
+
+            const lineHeight = +window.getComputedStyle(text).lineHeight.split('px')[0];
+            const webkitLineClamp = window.innerWidth < 570 ? '8' : '10';
+            const textClientHeight = text.offsetHeight;
+
+            if ((textClientHeight / lineHeight) > webkitLineClamp) {
+                btn.classList.add('active');
+                text.classList.add('hidden');
+                text.style['webkitLineClamp'] = webkitLineClamp;
+            }
+        }, 150)
+    })
+}
+document.addEventListener('DOMContentLoaded', reviewTextActions);
+window.addEventListener('resize', reviewTextActions);
+
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-questions-btn-more]');
+
+    if (btn) {
+        const wrapper = btn.closest('[data-questions-description]');
+        const item = wrapper.querySelectorAll('p');
+
+        item.forEach( paragraph => {
+            paragraph.classList.toggle('active');
+        })
+        btn.textContent =  btn.textContent === 'Читать полностью' ? 'Скрыть' : 'Читать полностью';
+    }
+})
+
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-questions-item-question]');
+
+    if (btn) {
+        const wrapper = btn.closest('[data-questions-items-wrapper]');
+        const item = btn.closest('[data-questions-item]');
+        const allItem = wrapper.querySelectorAll('[data-questions-item]');
+
+        allItem.forEach( each => {
+            const question = each.querySelector('[data-questions-item-question]');
+            const answer = each.querySelector('[data-questions-item-answer]');
+
+            if (item !== each) {
+                question.classList.remove('active');
+                answer.classList.remove('active');
+            } else {
+                question.classList.toggle('active');
+                answer.classList.toggle('active');
+            }
+        })
+    }
+})
