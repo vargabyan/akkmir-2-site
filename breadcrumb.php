@@ -14,7 +14,7 @@ function breadcrumb($arg = [['url' => '', 'name' => '']])
                 if (($item['url'] || $item['name']) && $key < $arg_count) {
                     ?>
                     <li>
-                        <div class="breadcrumb_line"></div>
+                        <div class="breadcrumb_line">/</div>
                     </li>
                     <li>
                         <a class="breadcrumb_item" href="<?= $item['url'] ?> "> <?= $item['name'] ?></a>
@@ -23,7 +23,7 @@ function breadcrumb($arg = [['url' => '', 'name' => '']])
                 }
                 if ($key == $arg_count) { ?>
                     <li>
-                        <div class="breadcrumb_line"></div>
+                        <div class="breadcrumb_line">/</div>
                     </li>
                     <li>
                         <p class="breadcrumb_item"> <?= $item['name'] ?></p>

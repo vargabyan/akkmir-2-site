@@ -89,7 +89,14 @@ document.addEventListener('click', e => {
     if (btn) {
         const wrapper = btn.closest('[data-select-section]');
         const itemWrapper = wrapper.querySelector('[data-select-section-drop-menu]');
+        const allItemWrapper = document.querySelectorAll('.active[data-select-section-drop-menu]');
 
+        allItemWrapper.forEach( item => {
+            const _wrapper = item.closest('[data-select-section]');
+
+            item.classList.remove('active');
+            _wrapper.querySelector('.active[data-select-section-value]').classList.remove('active');
+        })
         btn.classList.toggle('active');
         itemWrapper.classList.toggle('active');
     }
@@ -105,6 +112,7 @@ document.addEventListener('click', e => {
 
         itemWrapper.classList.remove('active');
         selectValue.classList.remove('active');
+        selectValue.classList.add('color');
         selectValue.textContent = selectItem.value;
     }
 })
@@ -209,3 +217,52 @@ document.addEventListener('click', e => {
         })
     }
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    const allWrapper = document.querySelectorAll('[data-select-slider-wrapper]');
+
+    allWrapper.forEach(wrapper => {
+        const sliderOne = wrapper.querySelector('[data-select-slider-input-decrement]');
+        const sliderTwo = wrapper.querySelector('[data-select-slider-input-increment]');
+        const displayValOne = wrapper.querySelector('[data-select-slider-value-min]');
+        const displayValTwo = wrapper.querySelector('[data-select-slider-value-max]');
+        const minGap = 0;
+        const sliderTrack = wrapper.querySelector('[data-select-slider-slider-track]');
+
+        function fillColor() {
+            const sliderMaxValue = wrapper.querySelector('[data-select-slider-input-decrement]');
+
+            if (sliderMaxValue) {
+                displayValOne.textContent = sliderOne.value;
+                displayValTwo.textContent = sliderTwo.value;
+                percent1 = (sliderOne.value / sliderMaxValue.max) * 100;
+                percent2 = (sliderTwo.value / sliderMaxValue.max) * 100;
+                sliderTrack.style.background = `linear-gradient(to right, #A1A1A1 ${percent1}% , #38BB5A ${percent1}%, #38BB5A ${percent2}%, #A1A1A1 ${percent2}%)`;
+            }
+        }
+
+        wrapper.addEventListener('input', e => {
+            const slider = e.target.closest('[data-select-slider-input-decrement]');
+
+            if (slider) {
+                if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                    sliderOne.value = parseInt(sliderTwo.value) - minGap;
+                }
+                fillColor();
+            }
+        })
+
+        wrapper.addEventListener('input', e => {
+            const slider = e.target.closest('[data-select-slider-input-increment]');
+
+            if (slider) {
+                if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                    sliderTwo.value = parseInt(sliderOne.value) + minGap;
+                }
+                fillColor();
+            }
+        })
+
+        fillColor()
+    })
+});
