@@ -5,8 +5,9 @@ require 'breadcrumb.php';
 breadcrumb([['url' => '', 'name' => 'доставка и оплата']]);
 ?>
 
-<section class="core-container payment-and-delivery">
-    <div class="payment-and-delivery_content">
+
+<section class="core-container payment-and-delivery" data-payment>
+    <div class="payment-and-delivery_content" data-payment-content>
         <div class="payment-and-delivery_header-wrapper">
             <h1 class="payment-and-delivery_header">Оплата</h1>
         </div>
@@ -24,7 +25,8 @@ breadcrumb([['url' => '', 'name' => 'доставка и оплата']]);
             </div>
         </div>
     </div>
-    <div class="payment-and-delivery_additional-text-wrapper">
+    <div class="payment-and-delivery_additional-text-wrapper" data-payment-additional-text>
+        <span class="payment-and-delivery_additional-text_title">Условия доставки в <br> Екатеринбурге</span>
         <p>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
         </p>
@@ -32,7 +34,7 @@ breadcrumb([['url' => '', 'name' => 'доставка и оплата']]);
 </section>
 
 
-<section class="core-container payment-and-delivery delivery">
+<section class="core-container payment-and-delivery delivery" data-delivery>
     <div class="payment-and-delivery_content">
         <div class="payment-and-delivery_header-wrapper">
             <h1 class="payment-and-delivery_header">Доставка</h1>
@@ -69,7 +71,8 @@ breadcrumb([['url' => '', 'name' => 'доставка и оплата']]);
             </div>
         </div>
     </div>
-    <div class="payment-and-delivery_additional-text-wrapper">
+    <div class="payment-and-delivery_additional-text-wrapper" data-delivery-additional-text>
+        <span class="payment-and-delivery_additional-text_title">Доставка за пределы <br> ЕКАД и по России</span>
         <p>
             При оформлении заказа до 12.00 — доставка будет осуществлена в этот день в промежутке с 13.00 до 18.00 либо в другой день или промежуток времени, согласованный с менеджером интернет-магазина.
             <br>
@@ -84,5 +87,26 @@ breadcrumb([['url' => '', 'name' => 'доставка и оплата']]);
         </p>
     </div>
 </section>
+
+
+<section class="core-container help">
+    <div class="help_ask-question">
+        <span class="help_ask-question_title">Остались вопросы?</span>
+        <div class="help_ask-question_person-wrapper">
+            <img class="help_ask-question_person_img" src="/images/help-employee-1.png" alt="image">
+            <p class="help_ask-question_person_data">
+                <span>Иван Иванов</span>
+                Наш менеджер проконсультирует вас
+                и ответит на все интересующие вопросы
+            </p>
+        </div>
+        <button class="help_ask-question_btn">задать вопрос</button>
+    </div>
+    <div class="help_you-choose-product">
+        <span class="help_you-choose-product_title">Подберите для&macr;себя необходимый товар</span>
+        <button class="help_you-choose-product_btn">Перейти в каталог</button>
+    </div>
+</section>
+
 
 <?php require 'footer.php' ?>

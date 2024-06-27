@@ -94,8 +94,10 @@ document.addEventListener('click', e => {
         allItemWrapper.forEach( item => {
             const _wrapper = item.closest('[data-select-section]');
 
-            item.classList.remove('active');
-            _wrapper.querySelector('.active[data-select-section-value]').classList.remove('active');
+            if (_wrapper !== wrapper) {
+                item.classList.remove('active');
+                _wrapper.querySelector('.active[data-select-section-value]').classList.remove('active');
+            }
         })
         btn.classList.toggle('active');
         itemWrapper.classList.toggle('active');
@@ -264,5 +266,128 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
         fillColor()
+
+
+        document.addEventListener('click', e => {
+            const btn = e.target.closest('[data-product-showcase-filter-params-btn-reset]');
+
+            if (btn) {
+                const form = btn.closest('[data-product-showcase-filter-params]');
+                const allSelectSlider = form.querySelectorAll('[data-select-slider-wrapper]');
+
+                allSelectSlider.forEach(item => {
+                    const decrement = item.querySelector('[data-select-slider-input-decrement]');
+                    const increment = item.querySelector('[data-select-slider-input-increment]');
+
+                    decrement.value = decrement.min;
+                    increment.value = decrement.max;
+                    fillColor()
+                })
+            }
+        })
     })
 });
+
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-product-showcase-links-menu-open]');
+
+    if (btn) {
+        const wrapper = btn.closest('[data-product-showcase-links-menu]');
+        const allWrapper = document.querySelectorAll('[data-product-showcase-links-menu]');
+
+        allWrapper.forEach( item => {
+            const hiddenEl = item.querySelector('[data-product-showcase-links-menu-drop-down]');
+            const _btn = item.querySelector('[data-product-showcase-links-menu-open]');
+
+            if (item !== wrapper) {
+                hiddenEl.classList.remove('active');
+                _btn.classList.remove('active');
+            } else {
+                hiddenEl.classList.toggle('active');
+                _btn.classList.toggle('active');
+            }
+        })
+    }
+})
+
+document.addEventListener('change', e => {
+    const btn = e.target.closest('[data-product-showcase-select-filter-params] input');
+
+    if (btn) {
+        const wrapper = btn.closest('[data-product-showcase-select-filter-params]');
+        const allLabel = wrapper.querySelectorAll('[data-product-showcase-select-filter-params-label]');
+
+        allLabel.forEach( label => {
+            if (btn === label.querySelector('input:checked')) {
+                label.classList.add('active');
+            } else {
+                label.classList.remove('active');
+            }
+        })
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-product-showcase-filter-params-btn-reset]');
+
+    if (btn) {
+        const form = btn.closest('[data-product-showcase-filter-params]');
+        const allSelect = form.querySelectorAll('[data-select-section]');
+
+        allSelect.forEach(item => {
+            const value = item.querySelector('[data-select-section-value]');
+            const inputChecked = item.querySelector('[data-select-section-drop-menu] input:checked');
+
+            value.textContent = 'Выбрать';
+            value.classList.remove('active')
+            value.classList.remove('color')
+            if (inputChecked) inputChecked.checked = false;
+        })
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-product-showcase-filter-btn-close]');
+
+    if (btn) {
+        const filter = btn.closest('[data-product-showcase-filter-mobile-wrapper]');
+
+        filter.classList.remove('active');
+        document.querySelector('body').style['overflow'] = '';
+    }
+})
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-product-showcase-filter-btn-open-menu]');
+
+    if (btn) {
+        const filter = btn.closest('[data-product-showcase-filter-mobile-wrapper]');
+
+        filter.classList.add('active');
+        document.querySelector('body').style['overflow'] = 'hidden';
+    }
+})
+
+
+const paymentAndDeliveryAction = () => {
+    const paymentText = document.querySelector('[data-payment-additional-text]');
+    const deliveryText = document.querySelector('[data-delivery-additional-text]');
+
+    if ((paymentText && deliveryText) && window.innerWidth < 570) {
+        const parent = deliveryText.closest('[data-delivery]');
+
+        parent.insertBefore(paymentText, deliveryText.nextSibling);
+    } else {
+        const parent = document.querySelector('[data-payment]');
+        const content = parent.querySelector('[data-payment-content]');
+
+        parent.insertBefore(paymentText, content.nextSibling);
+    }
+}
+window.addEventListener('resize', paymentAndDeliveryAction);
+document.addEventListener('DOMContentLoaded', paymentAndDeliveryAction);
+
+
+
+
+
