@@ -320,7 +320,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
 
 
 <section class="core-container questions">
-    <h2 class="questions_header site-header">Аккумуляторы <br> в Екатеринбурге</h2>
+    <h2 class="questions_header site-other-headers">Аккумуляторы <br> в Екатеринбурге</h2>
     <div class="questions_content">
         <div class="questions_description" data-questions-description>
             <p>

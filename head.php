@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="fancybox.css">
     <title>Akkmir 2 site</title>
 </head>
 <body>

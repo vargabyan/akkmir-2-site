@@ -69,6 +69,37 @@ new Swiper('[data-team-swiper]', {
 });
 
 
+const swiperThumbs = new Swiper('[data-swiper-Thumbs-gallery]', {
+    speed: 1000,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+        320: {
+            slidesPerView: 4,
+            spaceBetween: 12,
+        },
+        992: {
+            slidesPerView: 6,
+            spaceBetween: 14,
+        },
+    }
+});
+new Swiper('[data-swiper-gallery]', {
+    speed: 1000,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '[data-swiper-gallery-button-next]',
+        prevEl: '[data-swiper-gallery-button-prev]',
+    },
+    thumbs: {
+        swiper: swiperThumbs,
+    },
+});
+
+
+Fancybox.bind('[data-fancybox="gallery"]', {});
+
+
 document.addEventListener('click', e => {
     const wrapper = e.target.closest('[data-select-section]');
     const allItemWrapper = document.querySelectorAll('.active[data-select-section-drop-menu]');
@@ -386,6 +417,25 @@ const paymentAndDeliveryAction = () => {
 }
 window.addEventListener('resize', paymentAndDeliveryAction);
 document.addEventListener('DOMContentLoaded', paymentAndDeliveryAction);
+
+
+const productCardAction = () => {
+    const tags = document.querySelector('[data-product-card-tags-wrapper]');
+    const characteristic = document.querySelector('[data-product-card-characteristic-content]');
+
+    if ((tags && characteristic) && window.innerWidth < 1200) {
+        const parent = characteristic.parentNode;
+
+        parent.insertBefore(tags, characteristic.nextSibling);
+    } else {
+        const linkAllCharacteristic = document.querySelector('[data-link-all-characteristic]');
+        const parent = linkAllCharacteristic.parentNode;
+
+        parent.insertBefore(tags, linkAllCharacteristic.nextSibling);
+    }
+}
+window.addEventListener('resize', productCardAction);
+document.addEventListener('DOMContentLoaded', productCardAction);
 
 
 

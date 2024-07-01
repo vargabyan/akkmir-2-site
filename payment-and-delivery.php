@@ -103,7 +103,7 @@ breadcrumb([['url' => '', 'name' => 'доставка и оплата']]);
         <button class="help_ask-question_btn">задать вопрос</button>
     </div>
     <div class="help_you-choose-product">
-        <span class="help_you-choose-product_title">Подберите для&macr;себя необходимый товар</span>
+        <span class="help_you-choose-product_title">Подберите для&nbsp;себя необходимый товар</span>
         <button class="help_you-choose-product_btn">Перейти в каталог</button>
     </div>
 </section>

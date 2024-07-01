@@ -35,7 +35,7 @@
 
 <section class="catalog-wrapper" data-page-type="home">
     <div class="core-container catalog">
-        <h2 class="catalog_header site-header">Каталог</h2>
+        <h2 class="catalog_header site-other-headers">Каталог</h2>
         <div class="catalog_go-to-catalog">
              <span class="catalog_go-to-catalog_title">Перейти в каталог</span>
             <div class="catalog_go-to-catalog_tags-wrapper">
@@ -145,7 +145,7 @@
 
 <section class="core-container slider-section">
     <div class="slider-section_head-wrapper">
-        <h2 class="slider-section_header site-header">Популярные товары</h2>
+        <h2 class="slider-section_header site-other-headers">Популярные товары</h2>
         <div class="slider-section_tags-wrapper">
             <span>Выберите категорию:</span>
             <div class="slider-section_tags">
@@ -215,7 +215,7 @@ $response_data_reviews = [
         'fullName' => 'Макс Ширков',
         'text' => 'Отличный магазин, в первую очень из-за персонала. К таким людям хочется возвращаться. Отдельная благодарность сотруднику Владимиру, профессионал своего дела. Во всех вопросах проконсультировал и проявил инициативу в установке!
 Вернусь и не раз'
-    ], 
+    ],
     [
         'image' => '/images/review-image-1.png',
         'fullName' => 'Макс Ширков',
@@ -233,7 +233,7 @@ $response_data_reviews = [
 ?>
 
 <section class="core-container review-section">
-    <h2 class="slider-review_header site-header">Отзывы</h2>
+    <h2 class="slider-review_header site-other-headers">Отзывы</h2>
     <div class="slider-review_btn-wrapper">
         <div class="review-slider-section_btn-prev" data-review-swiper-button-prev></div>
         <div class="review-slider-section_btn-next" data-review-swiper-button-next></div>
@@ -281,7 +281,7 @@ $response_data_reviews = [
 
 
 <section class="core-container slider-team">
-    <h2 class="slider-team_header site-header">Наша команда</h2>
+    <h2 class="slider-team_header site-other-headers">Наша команда</h2>
     <div class="slider-team_swiper" data-team-swiper>
         <div class="swiper-wrapper">
             <?php foreach ([1,2,3,4] as $item) { ?>
@@ -301,7 +301,7 @@ $response_data_reviews = [
 
 
 <section class="core-container questions">
-    <h2 class="questions_header site-header">Аккумуляторы <br> в Екатеринбурге</h2>
+    <h2 class="questions_header site-other-headers">Аккумуляторы <br> в Екатеринбурге</h2>
     <div class="questions_content">
         <div class="questions_description" data-questions-description>
             <p>
@@ -333,7 +333,7 @@ $response_data_reviews = [
                  <span>Не нашли ответ <br> на свой вопрос?</span>
                  <div class="questions_help-item_person">
                      <img src="/images/question-consultation-image-1.png" alt="image">
-                     Нам опытный специалист проконсультирует вас и ответит на все интересующие вопросы
+                     Наш опытный специалист проконсультирует вас и ответит на все интересующие вопросы
                  </div>
                  <button class="questions_help-item_btn-consultation">Получить консультацию</button>
              </div>

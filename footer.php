@@ -68,6 +68,7 @@
 
 
 <script src="swiper-bundle.min.js"></script>
+<script src="fancybox.umd.js"></script>
 <script src="scripts.js"></script>
 </body>
 </html>
