@@ -67,11 +67,10 @@ table {
 
 
 :root {
-
+    --stroke: #EBEBEB;
 }
 
 .core-container {
-    /*max-width: 1680px;*/
     max-width: 1640px;
     width: 100%;
     margin-right: auto;
@@ -461,16 +460,20 @@ table {
 
 
 .catalog-wrapper {
-    margin-top: 100px;
+    margin-top: 60px;
     width: 100%;
     background: #F5F5F5;
     padding-top: 93px;
     padding-bottom: 80px;
 }
 
+.catalog-wrapper[data-page-type="home"] {
+    margin-top: 100px;
+}
+
 .catalog {
     display: grid;
-    grid-template-columns: 507px 2fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 260px 260px 540px;
     grid-template-areas:
             'A D D'
@@ -480,8 +483,39 @@ table {
     gap: 20px;
 }
 
+.catalog_header-wrapper {
+    grid-area: A;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
 .catalog_header {
     grid-area: A;
+}
+
+.catalog_link-go-to {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+
+    color: #757575;
+    font-family: Gilroy;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.catalog_link-go-to:after {
+    display: block;
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='40' width='40' height='40' rx='20' transform='rotate(-90 0 40)' fill='%2338BB5A'/%3E%3Cpath d='M17 15L23 20L17 25' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
+}
+
+.catalog_special-position {
+    grid-area: B;
 }
 
 .catalog_go-to-catalog {
@@ -576,6 +610,7 @@ table {
     grid-area: D;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-rows: repeat(auto-fill, 260px);
     gap: 20px;
 }
 
@@ -2586,6 +2621,295 @@ table {
 }
 
 
+.contacts {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contacts_item-wrapper {
+    max-width: 1174px;
+    align-self: end;
+    display: flex;
+    gap: 30px;
+}
+
+.contacts_item {
+    min-width: 488px;
+    min-height: 179px;
+    display: flex;
+    padding: 20px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 20px;
+    border: 1px solid #A9A9A9;
+}
+
+.contacts_item_title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    color: #343434;
+    font-family: Gilroy;
+    font-size: 18px;
+    line-height: 133%;
+}
+
+.contacts_item_title {
+    color: #A1A1A1;
+    font-family: Bicubik;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.contacts_item_link-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 37px;
+    row-gap: 20px;
+    white-space: nowrap;
+}
+
+.contacts_item_link-tel,
+.contacts_item_link-mail {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    color: #343434;
+    font-family: Bicubik;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.contacts_item_link-mail {
+    font-family: Gilroy;
+}
+
+.contacts_item_link-tel:before,
+.contacts_item_link-mail:before {
+    display: block;
+    content: '';
+    width: 24px;
+    height: 24px;
+}
+
+.contacts_item_link-tel:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M10.6147 13.3834C12.3962 15.1634 14.4601 16.8668 15.276 16.0511C16.443 14.8844 17.1632 13.8672 19.738 15.9364C22.3117 18.0043 20.3344 19.3837 19.2035 20.5134C17.898 21.8185 13.032 20.5831 8.22224 15.7755C3.4136 10.9667 2.18133 6.1016 3.48787 4.79645C4.61885 3.66458 5.99179 1.68885 8.06019 4.26202C10.1297 6.83519 9.11352 7.55527 7.94428 8.72315C7.13177 9.53887 8.83444 11.6024 10.6147 13.3834Z' fill='%2338BB5A'/%3E%3C/svg%3E");
+}
+
+.contacts_item_link-mail:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.29915 6.83994L12 12.0684L19.7009 6.83994C19.5717 6.42131 19.169 6.11258 18.6977 6.11258H5.30233C4.83102 6.11258 4.42829 6.42131 4.29915 6.83994ZM19.7442 8.29734L12.3601 13.3108C12.1439 13.4575 11.8561 13.4575 11.6399 13.3108L4.25581 8.29734V16.872C4.25581 17.4289 4.72818 17.887 5.30233 17.887H18.6977C19.2718 17.887 19.7442 17.4289 19.7442 16.872V8.29734ZM3 7.12761C3 5.89803 4.03461 4.89453 5.30233 4.89453H18.6977C19.9654 4.89453 21 5.89803 21 7.12761V16.872C21 18.1016 19.9654 19.1051 18.6977 19.1051H5.30233C4.03461 19.1051 3 18.1016 3 16.872V7.12761Z' fill='%2338BB5A'/%3E%3C/svg%3E");
+}
+
+.contacts_item_btn-wrapper,
+.contacts_messengers-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.contacts_item_btn {
+    background: #F5F5F5;
+    padding: 15px 16px;
+}
+
+.contacts_messengers-item {
+    display: flex;
+    padding: 16px;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--stroke);
+}
+
+.contacts_messengers-item:after {
+    display: block;
+    content: '';
+    width: 24px;
+    height: 24px;
+}
+
+.contacts_messengers-item:nth-child(1):after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M18.3769 5.61905C17.5476 4.78558 16.5599 4.12475 15.4712 3.6751C14.3826 3.22544 13.2149 2.99597 12.0362 3.00005C7.09749 3.00005 3.07236 7.00504 3.07236 11.919C3.07236 13.494 3.48844 15.024 4.26633 16.374L3 21L7.74874 19.758C9.0603 20.469 10.5347 20.847 12.0362 20.847C16.9749 20.847 21 16.842 21 11.928C21 9.54303 20.0683 7.30204 18.3769 5.61905ZM12.0362 19.335C10.6975 19.335 9.38593 18.975 8.23719 18.3L7.96583 18.138L5.14372 18.876L5.89447 16.14L5.71357 15.861C4.96982 14.6793 4.5749 13.3133 4.57387 11.919C4.57387 7.83304 7.9206 4.50305 12.0271 4.50305C14.0171 4.50305 15.8894 5.27705 17.2915 6.68104C17.9857 7.36861 18.5358 8.18643 18.91 9.08712C19.2842 9.9878 19.475 10.9534 19.4714 11.928C19.4894 16.014 16.1427 19.335 12.0362 19.335ZM16.1246 13.791C15.8985 13.683 14.795 13.143 14.596 13.062C14.3879 12.99 14.2432 12.954 14.0894 13.17C13.9357 13.395 13.5106 13.899 13.3839 14.043C13.2573 14.196 13.1216 14.214 12.8955 14.097C12.6693 13.989 11.9457 13.746 11.0955 12.99C10.4261 12.396 9.98291 11.667 9.84724 11.442C9.7206 11.217 9.82914 11.1 9.94673 10.983C10.0462 10.884 10.1729 10.722 10.2814 10.596C10.3899 10.47 10.4352 10.371 10.5075 10.227C10.5799 10.074 10.5437 9.94803 10.4894 9.84003C10.4352 9.73203 9.98291 8.63404 9.80201 8.18404C9.6211 7.75204 9.43116 7.80604 9.29548 7.79704H8.86131C8.70754 7.79704 8.47236 7.85104 8.26432 8.07604C8.06533 8.30104 7.48643 8.84104 7.48643 9.93903C7.48643 11.037 8.29146 12.099 8.4 12.243C8.50854 12.396 9.98291 14.646 12.2261 15.609C12.7598 15.843 13.1759 15.978 13.5015 16.077C14.0352 16.248 14.5236 16.221 14.9126 16.167C15.3467 16.104 16.2422 15.627 16.4231 15.105C16.6131 14.583 16.6131 14.142 16.5497 14.043C16.4864 13.944 16.3508 13.899 16.1246 13.791Z' fill='%23A1A1A1'/%3E%3C/svg%3E");
+}.contacts_messengers-item:nth-child(2):after {
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8.52365 6.73446C8.35942 6.71124 8.19196 6.74335 8.04912 6.82543H8.03675C7.70538 7.01424 7.4067 7.25196 7.1522 7.53174C6.94012 7.76947 6.82525 8.00977 6.7952 8.24149C6.77753 8.3788 6.7899 8.51783 6.83143 8.64914L6.84734 8.65772C7.08593 9.33829 7.39698 9.99311 7.77696 10.6093C8.26691 11.4748 8.86983 12.2753 9.5708 12.9909L9.59201 13.02L9.62559 13.0441L9.64591 13.0672L9.67065 13.0878C10.41 13.7707 11.2362 14.359 12.129 14.8386C13.1496 15.3784 13.7691 15.6333 14.1411 15.7397V15.7449C14.2498 15.7775 14.3488 15.7921 14.4486 15.7921C14.7655 15.7693 15.0654 15.6443 15.3005 15.4368C15.5877 15.1896 15.8307 14.8987 16.0198 14.5751V14.5691C16.1974 14.243 16.1373 13.9358 15.8811 13.7272C15.3663 13.2904 14.8097 12.9024 14.2189 12.5686C13.823 12.3601 13.4209 12.4862 13.2583 12.6974L12.9111 13.123C12.7326 13.3342 12.4091 13.305 12.4091 13.305L12.4003 13.3101C9.98701 12.7119 9.34281 10.339 9.34281 10.339C9.34281 10.339 9.31277 10.0163 9.53634 9.8515L9.9711 9.51165C10.1796 9.34687 10.3246 8.95724 10.101 8.57276C9.75955 7.99841 9.36088 7.458 8.9107 6.95931C8.81251 6.84195 8.67482 6.76201 8.52189 6.7336L8.52365 6.73446ZM12.6018 5.70288C12.4846 5.70288 12.3722 5.74809 12.2894 5.82856C12.2065 5.90904 12.1599 6.01818 12.1599 6.13199C12.1599 6.2458 12.2065 6.35494 12.2894 6.43542C12.3722 6.51589 12.4846 6.5611 12.6018 6.5611C13.7187 6.5611 14.6466 6.91554 15.3809 7.59525C15.7582 7.96686 16.0525 8.40712 16.2451 8.88944C16.4387 9.37262 16.527 9.88841 16.504 10.4051C16.4991 10.5189 16.541 10.6299 16.6203 10.7138C16.6997 10.7976 16.8101 10.8474 16.9273 10.8522C17.0445 10.857 17.1588 10.8163 17.2452 10.7392C17.3315 10.6622 17.3828 10.5549 17.3877 10.4411C17.4151 9.80558 17.3065 9.17144 17.0687 8.57877C16.8299 7.98328 16.4678 7.44173 16.0048 6.98763L15.9959 6.97905C15.0849 6.13371 13.9326 5.70288 12.6018 5.70288Z' fill='%23A1A1A1'/%3E%3Cpath d='M12.5707 7.11385C12.4535 7.11385 12.3411 7.15906 12.2583 7.23953C12.1754 7.32 12.1289 7.42915 12.1289 7.54296C12.1289 7.65676 12.1754 7.76591 12.2583 7.84638C12.3411 7.92686 12.4535 7.97207 12.5707 7.97207H12.5857C13.3916 8.02785 13.9784 8.28875 14.3893 8.717C14.8108 9.15812 15.0291 9.70652 15.0123 10.3845C15.0096 10.4983 15.0535 10.6085 15.1345 10.6908C15.2154 10.7732 15.3268 10.8209 15.4439 10.8235C15.5611 10.8261 15.6746 10.7834 15.7593 10.7048C15.8441 10.6262 15.8932 10.5181 15.8959 10.4043C15.9171 9.51428 15.622 8.74618 15.037 8.13341V8.13169C14.4388 7.50863 13.6178 7.17907 12.6299 7.11471L12.6149 7.11299L12.5707 7.11385Z' fill='%23A1A1A1'/%3E%3Cpath d='M12.5539 8.55116C12.4947 8.54609 12.4352 8.55265 12.3787 8.57044C12.3222 8.58822 12.27 8.61688 12.2252 8.65469C12.1804 8.6925 12.1439 8.7387 12.1179 8.79051C12.0919 8.84233 12.0769 8.89871 12.0738 8.95628C12.0707 9.01385 12.0796 9.07144 12.0999 9.1256C12.1203 9.17976 12.1516 9.22939 12.1921 9.27152C12.2327 9.31365 12.2815 9.34742 12.3358 9.37081C12.39 9.3942 12.4486 9.40673 12.5079 9.40766C12.8773 9.42654 13.1132 9.53468 13.2617 9.67971C13.411 9.82561 13.5224 10.0599 13.5427 10.4264C13.5438 10.4839 13.5568 10.5407 13.581 10.5933C13.6052 10.6459 13.64 10.6932 13.6834 10.7325C13.7268 10.7717 13.7779 10.8021 13.8337 10.8217C13.8894 10.8414 13.9487 10.8499 14.0079 10.8469C14.0671 10.8438 14.1251 10.8292 14.1784 10.804C14.2317 10.7787 14.2792 10.7432 14.318 10.6998C14.3569 10.6563 14.3864 10.6056 14.4047 10.5508C14.423 10.4961 14.4298 10.4383 14.4246 10.3809C14.3963 9.86595 14.2302 9.41109 13.89 9.07639C13.548 8.74168 13.0823 8.57862 12.5539 8.55116Z' fill='%23A1A1A1'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.73009 3.45784C10.542 2.84739 13.458 2.84739 16.2698 3.45784L16.5694 3.5222C17.3914 3.70067 18.1463 4.09697 18.7503 4.66708C19.3544 5.23719 19.7838 5.95878 19.991 6.75167C20.7047 9.48329 20.7047 12.3448 19.991 15.0764C19.7838 15.8693 19.3544 16.5909 18.7503 17.161C18.1463 17.7311 17.3914 18.1274 16.5694 18.3059L16.269 18.3702C14.5078 18.7527 12.7007 18.8968 10.8989 18.7985L8.55455 20.8359C8.46616 20.9127 8.35816 20.9651 8.24181 20.9876C8.12545 21.0101 8.00502 21.0019 7.89308 20.9637C7.78113 20.9256 7.68178 20.8589 7.60539 20.7708C7.529 20.6826 7.47838 20.5762 7.4588 20.4626L7.07087 18.2123C6.32699 17.9875 5.65489 17.5812 5.11882 17.0322C4.58276 16.4831 4.20063 15.8098 4.00897 15.0764C3.29519 12.3448 3.29519 9.48328 4.00897 6.75167C4.21612 5.95878 4.64556 5.23719 5.24958 4.66708C5.8536 4.09697 6.60854 3.70067 7.43052 3.5222L7.73009 3.45784ZM15.9809 4.71341C13.3593 4.14424 10.6406 4.14424 8.01905 4.71341L7.7186 4.77863C7.13601 4.90535 6.601 5.18642 6.17296 5.59062C5.74491 5.99482 5.4406 6.50633 5.29382 7.06836C4.63435 9.59214 4.63435 12.2359 5.29382 14.7597C5.44067 15.3218 5.74512 15.8334 6.17332 16.2376C6.60153 16.6418 7.13674 16.9228 7.71948 17.0494L7.79901 17.0666C7.92767 17.0945 8.04482 17.1591 8.13549 17.2521C8.22616 17.345 8.28622 17.4621 8.308 17.5884L8.5678 19.0971L10.222 17.6596C10.2881 17.602 10.3654 17.5579 10.4493 17.5299C10.5333 17.5019 10.6221 17.4906 10.7107 17.4966C12.4772 17.6183 14.2525 17.4896 15.9809 17.1146L16.2804 17.0494C16.8632 16.9228 17.3984 16.6418 17.8266 16.2376C18.2548 15.8334 18.5593 15.3218 18.7061 14.7597C19.3653 12.2365 19.3653 9.59237 18.7061 7.06836C18.5593 6.50622 18.2548 5.99463 17.8266 5.59042C17.3984 5.18621 16.8632 4.90521 16.2804 4.77863L15.9809 4.71341Z' fill='%23A1A1A1'/%3E%3C/svg%3E");
+}.contacts_messengers-item:nth-child(3):after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.36696 11.4252L6.50581 12.9475C6.57557 12.9612 6.6472 12.9563 6.71497 12.9332L6.7177 12.9312C7.67281 12.2503 16.1876 6.18023 16.6792 5.97605C16.7567 5.94957 16.8144 5.9794 16.7991 6.03987C16.6019 6.82034 9.19283 14.255 9.19283 14.255C9.19283 14.255 9.16276 14.2936 9.14501 14.3412L9.13715 14.3359L8.7509 18.97C8.7509 18.97 8.58923 20.3899 9.84674 18.97C10.7327 17.9696 11.5919 17.1306 12.0223 16.7221C13.4451 17.8311 14.9767 19.0581 15.6374 19.6997C15.7481 19.8209 15.8793 19.9158 16.0231 19.9786C16.167 20.0415 16.3206 20.0709 16.4747 20.0653C17.1021 20.0387 17.2772 19.2608 17.2772 19.2608C17.2772 19.2608 20.2038 5.96648 20.3015 4.1852C20.3053 4.11769 20.3096 4.05965 20.3134 4.0069C20.3195 3.9234 20.3247 3.85317 20.3254 3.77964C20.3305 3.64096 20.3184 3.50215 20.2895 3.36723C20.2748 3.29084 20.2424 3.22023 20.1956 3.16263C20.1488 3.10502 20.0893 3.06248 20.0231 3.03937C19.7558 2.92466 19.3024 3.09712 19.3024 3.09712C19.3024 3.09712 3.24544 9.61232 2.32838 10.3339C2.13053 10.4888 2.06439 10.579 2.0316 10.6849C1.87233 11.1986 2.36696 11.4252 2.36696 11.4252Z' fill='%23A1A1A1'/%3E%3C/svg%3E");
+}
+
+ .contacts_map-content {
+     margin-top: 30px;
+     display: flex;
+     justify-content: space-between;
+     gap: 20px;
+ }
+
+.contacts_map_address-wrapper {
+    max-width: 577px;
+    width: 100%;
+    max-height: 571px;
+    padding: 16px;
+}
+
+.contacts_map_address {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-color: #38BB5A #CACACA;
+    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 20px;
+}
+
+.contacts_map_address_item {
+    display: flex;
+    padding: 16px 28px 16px 20px;
+    gap: 15px;
+    border-radius: 20px;
+    background: #F9F9F9;
+    cursor: pointer;
+}
+
+.contacts_map_address_item_img {
+    width: 108px;
+    height: 108px;
+    border-radius: 10px;
+    background: lightgray 50% / cover no-repeat;
+}
+
+.contacts_map_address_item_content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contacts_map_address_item_grade-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.contacts_map_address_item_stars_item {
+    width: 21px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='20' viewBox='0 0 21 20' fill='none'%3E%3Cg clip-path='url(%23clip0_338_5882)'%3E%3Cpath d='M12.7392 8.33366L10.7142 1.66699L8.68919 8.33366H2.38086L7.53086 12.0087L5.57253 18.3337L10.7142 14.4253L15.8642 18.3337L13.9059 12.0087L19.0475 8.33366H12.7392Z' fill='%23ADADAD'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_338_5882'%3E%3Crect width='20' height='20' fill='white' transform='translate(0.714844)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+
+.contacts_map_address_item_stars_item.active {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='20' viewBox='0 0 21 20' fill='none'%3E%3Cg clip-path='url(%23clip0_338_5882)'%3E%3Cpath d='M12.7392 8.33366L10.7142 1.66699L8.68919 8.33366H2.38086L7.53086 12.0087L5.57253 18.3337L10.7142 14.4253L15.8642 18.3337L13.9059 12.0087L19.0475 8.33366H12.7392Z' fill='%23F3E13E'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_338_5882'%3E%3Crect width='20' height='20' fill='white' transform='translate(0.714844)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+
+.contacts_map_address_item_grade {
+    margin-left: 4px;
+    color: #ADADAD;
+    font-family: Bicubik;
+    font-size: 14px;
+}
+
+.contacts_map_address_item_address-wrapper {
+    margin-top: 8px;
+}
+
+.contacts_map_address_item_address-wrapper,
+.contacts_map_address_item_address-wrapper p {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    color: #ADADAD;
+    font-family: Gilroy;
+    font-size: 14px;
+}
+
+.contacts_map_address_item_address-wrapper span {
+    color: #343434;
+    font-family: Bicubik;
+    font-size: 12px;
+}
+
+.contacts_map {
+    overflow: hidden;
+    border-radius: 22px;
+    background:  lightgray 50% / cover no-repeat;
+}
+
+.contacts_map, .contacts_map * {
+    height: 571px;
+    width: 100%;
+}
+
+
+.confidentiality {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Confidentiality_content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Confidentiality_title {
+    font-size: 34px;
+}
+
+.Confidentiality_text-wrapper {
+    max-width: 1525px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    color: #757575;
+    font-family: Gilroy;
+    font-size: 24px;
+    line-height: 140%;
+}
+
+
+.warning {
+    margin-top: 100px;
+    max-width: 882px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.warning_header {
+    font-size: 240px;
+    line-height: 180px;
+}
+
+.warning_text {
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.warning_link-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.warning_link {
+    text-decoration: none;
+    padding: 17px 28px;
+    font-size: 16px;
+    min-width: 175px;
+}
+
+
+
 
 
 
@@ -2930,6 +3254,16 @@ table {
     }
 
 
+    .contacts_item {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .contacts_item_btn-wrapper {
+        flex-wrap: wrap;
+    }
+
+
 
 
     .footer_tel {
@@ -3071,6 +3405,22 @@ table {
     .our-principles_content {
         flex-direction: column;
     }
+
+
+    .contacts_item-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .contacts_map-content {
+        flex-direction: column-reverse;
+    }
+
+    .contacts_map_address-wrapper {
+        max-width: 100%;
+        max-height: 1044px;
+    }
+
+
 
 
 
@@ -3248,6 +3598,10 @@ table {
 
     .catalog {
         grid-template-rows: max-content 1fr 176px 313px;
+    }
+
+    .catalog_link-go-to {
+        display: none;
     }
 
     .catalog_go-to-catalog {
@@ -4055,6 +4409,139 @@ table {
     }
 
 
+    .contacts {
+    }
+
+    .contacts_item-wrapper {
+        gap: 20px;
+    }
+
+    .contacts_item {
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .contacts_item:first-child {
+        padding: 0;
+        border: none;
+    }
+
+    .contacts_item_title-wrapper {
+        font-size: 14px;
+        line-height: 160%;
+    }
+
+    .contacts_item_title {
+        font-size: 14px;
+    }
+
+    .contacts_item_link-wrapper {
+        row-gap: 12px;
+        margin-top: 10px;
+    }
+
+    .contacts_item_btn {
+        padding: 19px 16px;
+    }
+
+    .contacts_item_link-tel,
+    .contacts_item_link-mail {
+        font-size: 24px;
+    }
+
+    .contacts_item_btn-wrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contacts_map-content {
+        margin-top: 34px;
+        row-gap: 62px;
+    }
+
+    .contacts_map_address-wrapper {
+        padding: 14px;
+        border-radius: 20px;
+        border: 1px solid #939393;
+    }
+
+    .contacts_map_address {
+        max-height: 1014px;
+        gap: 10px;
+    }
+
+    .contacts_map_address_item {
+        flex-direction: column;
+        padding: 14px 14px 28px 14px;
+        gap: 14px;
+    }
+
+    .contacts_map_address_item_img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contacts_map_address_item_content {
+        flex-direction: column;
+        align-items: self-start;
+        gap: 20px;
+    }
+
+    .contacts_map_address_item_address-wrapper {
+        margin-top: 0;
+    }
+
+    .contacts_map_address_item_address-wrapper span {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .contacts_map, .contacts_map * {
+        height: 475px;
+    }
+
+
+    .confidentiality {
+        margin-top: 30px;
+    }
+
+    .Confidentiality_content {
+        gap: 24px;
+    }
+
+    .Confidentiality_title {
+        font-size: 18px;
+    }
+
+    .Confidentiality_text-wrapper {
+        gap: 10px;
+
+        font-size: 14px;
+    }
+
+
+    .warning {
+        margin-top: 70px;
+    }
+
+    .warning_header {
+        font-size: 139px;
+        line-height: 220px;
+    }
+
+    .warning_text {
+    }
+
+    .warning_link-wrapper {
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .warning_link {
+        width: 100%;
+        padding: 17px 28px;
+        font-size: 16px;
+    }
 
 
 

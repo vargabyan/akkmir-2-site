@@ -408,7 +408,7 @@ const paymentAndDeliveryAction = () => {
         const parent = deliveryText.closest('[data-delivery]');
 
         parent.insertBefore(paymentText, deliveryText.nextSibling);
-    } else {
+    } else if (document.querySelector('[data-payment]')) {
         const parent = document.querySelector('[data-payment]');
         const content = parent.querySelector('[data-payment-content]');
 
@@ -427,7 +427,7 @@ const productCardAction = () => {
         const parent = characteristic.parentNode;
 
         parent.insertBefore(tags, characteristic.nextSibling);
-    } else {
+    } else if (document.querySelector('[data-link-all-characteristic]')) {
         const linkAllCharacteristic = document.querySelector('[data-link-all-characteristic]');
         const parent = linkAllCharacteristic.parentNode;
 

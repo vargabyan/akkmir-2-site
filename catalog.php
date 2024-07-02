@@ -2,25 +2,24 @@
 
 <?php
 require 'breadcrumb.php';
-breadcrumb([['url' => '', 'name' => '404']]);
+breadcrumb([['url' => '', 'name' => 'Каталог']]);
 ?>
-
-
-<section class="core-container warning">
-    <h1 class="warning_header">404</h1>
-    <p class="warning_text">Кажется что-то пошло не так! Страница, которую вы запрашиваете, не существует. Возможно она  устарела, была удалена, или был введен неверный адрес в адресной строке.</p>
-    <div class="warning_link-wrapper">
-        <a class="warning_link btn-green" href="catalog.php">В каталог</a>
-        <a class="warning_link btn-invisible-with-border" href="/">Вернуться на главную</a>
-    </div>
-</section>
 
 
 <section class="catalog-wrapper">
     <div class="core-container catalog">
-        <div class="catalog_header-wrapper">
-            <h2 class="catalog_header site-other-headers">Каталог</h2>
-            <a class="catalog_link-go-to" href="catalog.php">Перейти в каталог</a>
+        <h2 class="catalog_header site-other-headers">Каталог</h2>
+        <div class="catalog_item catalog_special-position">
+            <span class="catalog_item_title">Автоаксессуары</span>
+            <img class="catalog_item_img" src="/images/catalog-image-5.png" alt="image">
+            <div class="catalog_item_tags-wrapper">
+                <span>Фонари</span>
+                <span>Автоаксессуары в багажник</span>
+                <span>Термочехлы</span>
+                <span>Ароматизаторы воздуха</span>
+                <span>Перчатки</span>
+                <span>Автоаксессуары в салон</span>
+            </div>
         </div>
         <div class="catalog_need-help">
             <span class="catalog_need-help_title">Нужна помощь в&nbsp;выборе?</span>
@@ -118,6 +117,71 @@ breadcrumb([['url' => '', 'name' => '404']]);
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+
+<section class="core-container slider-section">
+    <div class="slider-section_head-wrapper">
+        <h2 class="slider-section_header site-other-headers">Популярные товары</h2>
+        <div class="slider-section_tags-wrapper">
+            <span>Выберите категорию:</span>
+            <div class="slider-section_tags">
+                <a href="">Все товары</a>
+                <a href="">Аккумуляторы и клеммы</a>
+                <a href="">Масла</a>
+                <a href="">Спец. жидкости</a>
+                <a href="">Автоэлектроника и элементы питания</a>
+                <a href="">Инструменты</a>
+                <a href="">Автокосметика и автохимия</a>
+            </div>
+        </div>
+    </div>
+    <div class="slider-section_swiper-wrapper">
+        <div class="slider-section_swiper" data-popular-goods-swiper>
+            <div class="swiper-wrapper">
+                <?php foreach ([1,2,3,4,5] as $item) { ?>
+                    <div class="swiper-slide">
+                        <div class="popular-goods_item">
+                            <div class="popular-goods_item_img-wrapper">
+                                <span>Товар недели</span>
+                                <img src="/images/popular-goods-img-1.png" alt="image">
+                            </div>
+                            <div class="popular-goods_item_content-wrapper" data-popular-goods-transfer-parent>
+                            <span class="popular-goods_item_title" data-popular-goods-transfer-place-one>
+                                Аккумулятор 6МТС Tyumen Battery Мото «Лидер» 9 Ач о.п…
+                            </span>
+                                <div class="popular-goods_item_characteristic-wrapper">
+                                    <div class="popular-goods_item_characteristic" data-popular-goods-transfer-place-two>
+                                        <span>Пусковой ток (А): 45</span>
+                                        <span>Ёмкость Ач: 9</span>
+                                    </div>
+                                    <div class="popular-goods_item_guarantee" data-popular-goods-transfer-el>
+                                        Гарантия
+                                        <span>12 месяцев</span>
+                                        <img src="/images/popular-goods--guarantee-image.png" alt="image">
+                                    </div>
+                                </div>
+                                <div class="popular-goods_item_prices">
+                                    1 200 ₽
+                                    <span>2 300 ₽</span>
+                                </div>
+                                <div class="popular-goods_item_in-stock">
+                                    В наличии в
+                                    <a href=""> 12 пунктах выдачи заказов</a>
+                                </div>
+                                <div class="popular-goods_item_btn-wrapper">
+                                    <button class="btn-green">Купить в 1 клик</button>
+                                    <button class="btn-invisible-with-basket btn-invisible-with-border"><span>В корзину</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+        <div class="slider-section_btn-prev" data-popular-goods-swiper-button-prev></div>
+        <div class="slider-section_btn-next" data-popular-goods-swiper-button-next></div>
     </div>
 </section>
 
