@@ -6,7 +6,7 @@ breadcrumb([['url' => '', 'name' => 'Каталог']]);
 ?>
 
 
-<section class="catalog-wrapper">
+<section class="catalog-wrapper" data-page-type="catalog">
     <div class="core-container catalog">
         <h2 class="catalog_header site-other-headers">Каталог</h2>
         <div class="catalog_item catalog_special-position">

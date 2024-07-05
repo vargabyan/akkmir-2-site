@@ -16,7 +16,7 @@ breadcrumb([['url' => '', 'name' => '404']]);
 </section>
 
 
-<section class="catalog-wrapper">
+<section class="catalog-wrapper" data-page-type="404">
     <div class="core-container catalog">
         <div class="catalog_header-wrapper">
             <h2 class="catalog_header site-other-headers">Каталог</h2>
