@@ -71,7 +71,7 @@ table {
 }
 
 .core-container {
-    max-width: 1640px;
+    max-width: 1680px;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -377,7 +377,7 @@ table {
     z-index: 2;
 
     color: #343434;
-    font-size: clamp(42px, 3.5vw, 75px);
+    font-size: clamp(42px, 3.9vw, 75px);
     line-height: clamp(40px, 5.5vw, 96px);
 }
 
@@ -2914,9 +2914,13 @@ table {
 
 .basket {
     margin-top: 60px;
-    display: flex;
+    display: none;
     flex-direction: column;
     row-gap: 60px;
+}
+
+.basket.active {
+    display: flex;
 }
 
 .basket_empty-content {
@@ -2975,7 +2979,7 @@ table {
     grid-template-areas:
             'A B D'
             'A C D';
-    grid-template-columns: max-content 1fr max-content;
+    grid-template-columns: max-content 1fr 185px;
     column-gap: 20px;
     row-gap: 32px;
 
@@ -3010,9 +3014,13 @@ table {
 
 .basket_item_label-wrapper {
     grid-area: C;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 32px;
+}
+
+.basket_item_label-wrapper.active {
+    display: flex;
 }
 
 .basket_item_label {
@@ -3054,13 +3062,17 @@ table {
 
 .counter {
     width: 121px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     border-radius: 6px;
     border: 1px solid #E9E9E9;
     padding: 7px 9px;
+}
+
+.counter.active {
+    display: flex;
 }
 
 .counter_btn-decrement,
@@ -3106,6 +3118,7 @@ table {
 }
 
 .basket_item_btn-delete {
+    display: none;
     padding: 0;
     border: none;
     background-color: unset;
@@ -3113,6 +3126,10 @@ table {
     width: 20px;
     height: 20px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10 2.50003C10.68 2.50003 11.331 2.74903 11.82 3.19403C12.309 3.63903 12.596 4.24603 12.622 4.88703L12.624 4.98203H15.932C16.077 4.98203 16.218 5.03603 16.323 5.13103C16.3747 5.17678 16.4168 5.23235 16.4469 5.29452C16.4769 5.35669 16.4943 5.42421 16.498 5.49316C16.5017 5.56211 16.4917 5.63111 16.4685 5.69615C16.4454 5.76119 16.4095 5.82097 16.363 5.87203C16.266 5.9781 16.1331 6.04439 15.99 6.05803L15.932 6.06103H15.434L14.657 15.804C14.6173 16.2712 14.3966 16.7043 14.042 17.011C13.6763 17.3281 13.208 17.5019 12.724 17.5H7.278C6.79384 17.5016 6.32554 17.3275 5.96 17.01C5.60571 16.7035 5.38505 16.2708 5.345 15.804L4.568 6.06003H4.07C3.93021 6.06049 3.7948 6.01122 3.688 5.92103C3.58457 5.83385 3.51838 5.71042 3.503 5.57603L3.5 5.52203C3.5 5.24203 3.724 5.01203 4.012 4.98503L4.07 4.98203H7.378C7.378 4.32403 7.654 3.69203 8.146 3.22703C8.64904 2.75707 9.3126 2.49702 10.001 2.50003H10ZM14.29 6.06103H5.712L6.482 15.722C6.49855 15.9145 6.58971 16.0929 6.736 16.219C6.883 16.349 7.077 16.421 7.278 16.421H12.724C12.9231 16.4214 13.1157 16.3496 13.266 16.219C13.4123 16.0929 13.5035 15.9145 13.52 15.722L14.29 6.06103ZM11.484 8.32703C11.6216 8.32407 11.7555 8.37188 11.86 8.46134C11.9646 8.5508 12.0326 8.67564 12.051 8.81203L12.054 8.86703V13.615C12.054 13.6844 12.0402 13.7531 12.0134 13.8172C11.9866 13.8812 11.9474 13.9393 11.898 13.988C11.7945 14.0898 11.6572 14.1499 11.5122 14.1569C11.3673 14.1639 11.2248 14.1173 11.112 14.026C11.0575 13.9825 11.0122 13.9286 10.9785 13.8676C10.9449 13.8065 10.9236 13.7393 10.916 13.67L10.913 13.615V8.86703C10.913 8.56903 11.169 8.32703 11.483 8.32703H11.484ZM8.518 8.32703C8.65576 8.32382 8.78987 8.37152 8.89466 8.461C8.99946 8.55048 9.06758 8.67546 9.086 8.81203L9.089 8.86703V13.615C9.089 13.6844 9.0752 13.7531 9.04842 13.8172C9.02164 13.8812 8.98241 13.9393 8.933 13.988C8.8295 14.0898 8.6922 14.1499 8.54724 14.1569C8.40229 14.1639 8.25983 14.1173 8.147 14.026C8.09252 13.9825 8.04716 13.9286 8.01352 13.8676C7.97989 13.8065 7.95864 13.7393 7.951 13.67L7.948 13.615V8.86703C7.948 8.56903 8.203 8.32703 8.518 8.32703ZM10.001 3.58003C9.62621 3.5787 9.26397 3.71498 8.983 3.96303C8.707 4.20903 8.542 4.54603 8.521 4.90303L8.518 4.98303H11.484C11.484 4.61103 11.327 4.25403 11.049 3.99103C10.7647 3.72584 10.3898 3.57819 10.001 3.58003Z' fill='%23A1A1A1'/%3E%3C/svg%3E");
+}
+
+.basket_item_btn-delete.active {
+    display: block;
 }
 
 .basket_total-price-wrapper {
@@ -3133,9 +3150,10 @@ table {
     font-size: 24px;
 }
 
-.basket_total-price p {
+.basket_total-price div {
     display: flex;
     gap: 4px;
+    align-items: end;
 
     color: #343434;
     font-size: 33px;
@@ -3225,8 +3243,8 @@ table {
 
 
 .basket_form-data {
-    max-width: 614px;
-    padding-left: 70px;
+    max-width: 652px;
+    padding-left: 22px;
     width: 100%;
     display: none;
     flex-direction: column;
@@ -3347,12 +3365,18 @@ table {
 }
 
 .basket_form-submit {
+    padding: 19px 41px;
+
+    color: #FFF;
+    font-family: Bicubik;
+    font-size: 18px;
+    line-height: 120%;
 }
 
 
 .basket-successful {
     margin-top: 63px;
-    max-width: 682px;
+    max-width: 602px;
     width: 100%;
     height: max-content;
     padding: 20px 40px 40px 40px;
@@ -5206,8 +5230,7 @@ table {
         font-size: 18px;
     }
 
-    .basket_total-price p {
-        align-items: end;
+    .basket_total-price div {
         font-size: 34px;
     }
 

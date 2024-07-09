@@ -6,33 +6,31 @@ breadcrumb([['url' => '/basket.php', 'name' => 'Оформление заказ�
 ?>
 
 
-<section class="core-container basket">
+<section class="core-container basket active" data-basket-empty>
     <h1 class="basket_header site-header">Корзина</h1>
     <div class="basket_empty-content">
         <p class="basket_empty-content_text">В вашей корзине ничего нет</p>
-        <a class="basket_empty-content_link btn-green" href="">В каталог</a>
+        <a class="basket_empty-content_link btn-green" href="catalog.php">В каталог</a>
     </div>
 </section>
 
 
-<br><br><br><br><br><br><br><br>
-
-<section class="core-container basket">
+<section class="core-container basket" data-basket-have-product>
     <h1 class="basket_header site-header">Оформление</h1>
     <form action="/form" method="post" class="basket_form">
         <div class="basket_form-content">
             <p class="basket_total-products-stock">
                 Товары
-                <span>4 шт.</span>
+                <span><span data-basket-total-products-stock>0</span> шт.</span>
             </p>
-            <div class="basket_products-wrapper">
+            <div class="basket_products-wrapper" data-basket-products-wrapper>
                 <?php foreach ([1,2,3,4] as $item) { ?>
-                    <div class="basket_products_item">
+                    <div class="basket_products_item" data-basket-products-item>
                         <div class="basket_item_img-wrapper">
                             <img class="basket_item_img" src="/images/product-image-1.png" alt="image">
                         </div>
                         <p class="basket_item_title">Аккумулятор 6МТС Tyumen Battery Мото «Лидер» 9 Ач о.п.</p>
-                        <div class="basket_item_label-wrapper">
+                        <div class="basket_item_label-wrapper active" data-basket-item-label-wrapper>
                             <label class="basket_item_label">
                                 <input type="checkbox">
                                 Сдать свой аккумулятор и получить скидку
@@ -40,26 +38,26 @@ breadcrumb([['url' => '/basket.php', 'name' => 'Оформление заказ�
                         </div>
                         <div class="basket_item_count-wrapper">
                             <div class="basket_item_count">
-                                <span class="basket_item_price">1 200 ₽</span>
-                                <div class="counter">
-                                    <button type="button" class="counter_btn-decrement"></button>
+                                <p class="basket_item_price"><span data-basket-item-price>1 200</span> ₽</p>
+                                <div class="counter active" data-basket-counter>
+                                    <button type="button" class="counter_btn-decrement" data-basket-counter-decrement></button>
                                     <div class="counter_value">
-                                        1
+                                        <span data-basket-counter-value>1</span>
                                         <label class="counter_value_label">
-                                            <input type="tel" name="quantity" value="1">
+                                            <input type="tel" name="quantity" value="1" data-basket-counter-input>
                                         </label>
                                     </div>
-                                    <button type="button" class="counter_btn-increment"></button>
+                                    <button type="button" class="counter_btn-increment" data-basket-counter-increment></button>
                                 </div>
                             </div>
-                            <button class="basket_item_btn-delete"></button>
+                            <button class="basket_item_btn-delete active" data-basket-btn-delet-item></button>
                         </div>
                     </div>
                 <?php } ?>
             </div>
             <div class="basket_total-price-wrapper">
-                <div class="basket_total-price">Итого:<p>11 373 <span>₽</span></p></div>
-                <div class="basket_total-price_need-installation-wrapper active">
+                <div class="basket_total-price">Итого:<div><p data-basket-total-price>0</p> <span>₽</span></div></div>
+                <div class="basket_total-price_need-installation-wrapper active" data-basket-total-price-need-installation-wrapper>
                     <label class="basket_total-price_need-installation_label">
                         <input type="checkbox">
                         <span class="basket_total-price_need-installation">Мне требуется установка</span>
@@ -74,7 +72,7 @@ breadcrumb([['url' => '/basket.php', 'name' => 'Оформление заказ�
                 </div>
             </div>
         </div>
-         <div class="basket_form-data active">
+         <div class="basket_form-data active" data-basket-form-data>
             <p class="basket_form-data_title">форма для заявки</p>
             <div class="basket_form-data_content">
                 <label class="basket_form-data_label">
@@ -87,12 +85,12 @@ breadcrumb([['url' => '/basket.php', 'name' => 'Оформление заказ�
                 </label>
                 <div class="basket_form-data_delivery">
                     <p class="basket_form-data_delivery_title">Выберите способ получения</p>
-                    <div class="basket_form-data_delivery_label-wrapper">
-                        <label class="basket_form-data_delivery_label active">
+                    <div class="basket_form-data_delivery_label-wrapper" data-basket-form-data-delivery-label-wrapper>
+                        <label class="basket_form-data_delivery_label active" data-select-delivery-label>
                             Самовывоз
                             <input type="radio" name="select-delivery" value="Самовывоз">
                         </label>
-                        <label class="basket_form-data_delivery_label">
+                        <label class="basket_form-data_delivery_label" data-select-delivery-label>
                             Доставка
                             <input type="radio" name="select-delivery" value="Доставка">
                         </label>
@@ -115,10 +113,10 @@ breadcrumb([['url' => '/basket.php', 'name' => 'Оформление заказ�
                     Оставьте комментарий
                     <textarea name="" id="" cols="30" rows="4" placeholder="Комментарий"></textarea>
                 </label>
-                <button class="basket_form-submit btn-green">Оформить заявку</button>
+                <button class="basket_form-submit btn-green" data-basket-form-submit>Оформить заявку</button>
             </div>
         </div>
-        <div class="basket-successful active_">
+        <div class="basket-successful" data-basket-successful>
             <span class="basket-successful_icon"></span>
             <span class="basket-successful_title">Заявка оформлена!</span>
             <p class="basket-successful_description">Ожидайте звонка менеджера или позвоните по номеру для уточнения деталей заказа</p>

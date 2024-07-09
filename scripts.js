@@ -438,6 +438,138 @@ window.addEventListener('resize', productCardAction);
 document.addEventListener('DOMContentLoaded', productCardAction);
 
 
+const basketContentAction = () => {
+    const wrapper = document.querySelector('[data-basket-products-wrapper]');
 
+    if (wrapper) {
+        const allItem = wrapper.querySelectorAll('[data-basket-products-item]');
+        const basketEmpty = document.querySelector('[data-basket-empty]');
+        const ketHaveProduct = document.querySelector('[data-basket-have-product]');
+
+        if (allItem.length) {
+            basketEmpty.classList.remove('active')
+            ketHaveProduct.classList.add('active')
+        } else {
+            basketEmpty.classList.add('active')
+            ketHaveProduct.classList.remove('active')
+        }
+    }
+}
+document.addEventListener('DOMContentLoaded', basketContentAction);
+
+const basketTotalProduct = () => {
+    const wrapper = document.querySelector('[data-basket-products-wrapper]');
+
+    if (wrapper) {
+        const allItem = wrapper.querySelectorAll('[data-basket-products-item]');
+        const totalStock = document.querySelector('[data-basket-total-products-stock]');
+
+        totalStock.textContent = allItem.length;
+    }
+}
+document.addEventListener('DOMContentLoaded', basketTotalProduct);
+
+
+const basketTotalPriceAction = () => {
+    const wrapper = document.querySelector('[data-basket-products-wrapper]');
+
+    if (wrapper) {
+        const allItem = wrapper.querySelectorAll('[data-basket-products-item]');
+        const totalPrice = document.querySelector('[data-basket-total-price]');
+        let total = 0;
+
+        allItem.forEach( item => {
+            const price = item.querySelector('[data-basket-item-price]').textContent.replace(/ /g, '');
+            const count = item.querySelector('[data-basket-counter-value]').textContent;
+
+            total = total + (+price * +count);
+        })
+        totalPrice.textContent = total.toString().slice(0, 1) + ' ' + total.toString().slice(1);
+    }
+}
+document.addEventListener('DOMContentLoaded', basketTotalPriceAction);
+
+
+document.addEventListener('click', e => {
+    const btnDecrement = e.target.closest('[data-basket-counter-decrement]');
+    const btnIncrement = e.target.closest('[data-basket-counter-increment]');
+
+    if (btnDecrement) {
+        const counter = btnDecrement.closest('[data-basket-counter]');
+        const value = counter.querySelector('[data-basket-counter-value]');
+        const input = counter.querySelector('[data-basket-counter-input]');
+
+        if ((+value.textContent > 1) && (+input.value > 1)) {
+            input.value = +input.value - 1;
+            value.textContent = +value.textContent - 1;
+            basketTotalPriceAction()
+        }
+
+    } if (btnIncrement) {
+        const counter = btnIncrement.closest('[data-basket-counter]');
+        const value = counter.querySelector('[data-basket-counter-value]');
+        const input = counter.querySelector('[data-basket-counter-input]');
+
+        input.value = +input.value + 1;
+        value.textContent = +value.textContent + 1;
+        basketTotalPriceAction()
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-basket-btn-delet-item]');
+
+    if (btn) {
+        const item = btn.closest('[data-basket-products-item]');
+
+        item.remove()
+        basketTotalPriceAction()
+        basketTotalProduct()
+        basketContentAction()
+    }
+})
+
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-basket-form-submit]');
+
+    if (btn) {
+        e.preventDefault();
+        const wrapper = btn.closest('[data-basket-have-product]');
+        const form = wrapper.querySelector('[data-basket-form-data]');
+        const success = wrapper.querySelector('[data-basket-successful]');
+        const itemWrapper = wrapper.querySelector('[data-basket-products-wrapper]');
+        const allItem = itemWrapper.querySelectorAll('[data-basket-products-item]');
+        const installation = wrapper.querySelector('[data-basket-total-price-need-installation-wrapper]');
+
+        allItem.forEach(item => {
+            item.querySelector('[data-basket-item-label-wrapper]').classList.remove('active');
+            item.querySelector('[data-basket-btn-delet-item]').classList.remove('active');
+            item.querySelector('[data-basket-counter]').classList.remove('active');
+        })
+
+        installation.classList.remove('active');
+        form.classList.remove('active');
+        success.classList.add('active');
+    }
+})
+
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-select-delivery-label]');
+
+    if (btn && btn.querySelector('input')) {
+        e.preventDefault();
+        const wrapper = btn.closest('[data-basket-form-data-delivery-label-wrapper]');
+        const allInput = wrapper.querySelectorAll('.active[data-select-delivery-label]');
+
+
+        allInput.forEach( item => {
+            item.classList.remove('active');
+        })
+
+        btn.classList.add('active');
+    }
+})
 
 
