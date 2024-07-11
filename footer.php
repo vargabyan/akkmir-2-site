@@ -2,17 +2,13 @@
     <div class="core-container footer-container">
         <div class="footer_head">
             <div class="footer_city-and-logo-wrapper">
-                <span class="select-city">Екатеринбург</span>
-                <div class="logo-wrapper">
-                    <a class="logo" href="/">
-                        <span>Мега</span>
-                        <span>Ватт</span>
-                    </a>
-                    <p>
-                        Интернет-магазин аккумуляторов,<br>
-                        автомасел и автотоваров
-                    </p>
+                <div class="select-city-wrapper" data-btn-select-city-btn>
+                    <span class="select-city" data-btn-select-city-value>Екатеринбург</span>
                 </div>
+                <a class="logo-wrapper" href="/">
+                    <p class="logo">Мега</p>
+                    <p class="logo_text">Интернет-магазин аккумуляторов, <br> автомасел и автотоваров</p>
+                </a>
             </div>
             <div class="footer_contacts-wrapper">
                 <div class="footer_messengers-wrapper">
@@ -65,6 +61,9 @@
         </div>
     </div>
 </footer>
+
+
+<?php require 'popups.php'; ?>
 
 
 <script src="swiper-bundle.min.js"></script>

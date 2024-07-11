@@ -12,7 +12,7 @@
                                 Интернет-магазин аккумуляторов, автомасел и автотоваров
                             </h1>
                             <img class="banner_item_img" src="/images/banner-item-image-1.png" alt="image">
-                            <button class="banner_offer_btn-catalog btn-green">перейти в каталог</button>
+                            <a class="banner_offer_btn-catalog btn-green" href="catalog.php">перейти в каталог</a>
                         </div>
                     </div>
                 <?php } ?>
