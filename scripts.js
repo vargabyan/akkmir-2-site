@@ -141,12 +141,19 @@ document.addEventListener('click', e => {
     if (selectItem) {
         const wrapper = selectItem.closest('[data-select-section]');
         const selectValue = wrapper.querySelector('[data-select-section-value]');
+        const itemValue = wrapper.querySelector('[data-select-section-item-value]');
         const itemWrapper = wrapper.querySelector('[data-select-section-drop-menu]');
+        const allItems = wrapper.querySelectorAll('[data-select-section-item]');
 
+        selectItem.querySelector('input').checked = true;
+        allItems.forEach( item => {
+            item.querySelector('span').classList.remove('active');
+        });
+        selectItem.querySelector('span').classList.add('active');
         itemWrapper.classList.remove('active');
         selectValue.classList.remove('active');
         selectValue.classList.add('color');
-        selectValue.textContent = selectItem.value;
+        selectValue.textContent = itemValue.textContent;
     }
 })
 
@@ -536,7 +543,8 @@ document.addEventListener('click', e => {
     if (btn) {
         e.preventDefault();
         const wrapper = btn.closest('[data-basket-have-product]');
-        const form = wrapper.querySelector('[data-basket-form-data]');
+        const form = wrapper.querySelector('[data-basket-form]');
+        const formContent = wrapper.querySelector('[data-basket-form-data]');
         const success = wrapper.querySelector('[data-basket-successful]');
         const itemWrapper = wrapper.querySelector('[data-basket-products-wrapper]');
         const allItem = itemWrapper.querySelectorAll('[data-basket-products-item]');
@@ -549,7 +557,8 @@ document.addEventListener('click', e => {
         })
 
         installation.classList.remove('active');
-        form.classList.remove('active');
+        form.classList.add('reverse');
+        formContent.classList.remove('active');
         success.classList.add('active');
     }
 })
@@ -560,15 +569,25 @@ document.addEventListener('click', e => {
 
     if (btn && btn.querySelector('input')) {
         e.preventDefault();
-        const wrapper = btn.closest('[data-basket-form-data-delivery-label-wrapper]');
-        const allInput = wrapper.querySelectorAll('.active[data-select-delivery-label]');
+        const wrapper = btn.closest('[data-delivery-label-wrapper]');
+        const oldInput = wrapper.querySelector('.active[data-select-delivery-label]');
 
-
-        allInput.forEach( item => {
-            item.classList.remove('active');
-        })
-
+        oldInput.classList.remove('active');
         btn.classList.add('active');
+    }
+})
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-select-delivery-label]');
+
+    if (btn && btn.querySelector('input')) {
+        e.preventDefault();
+        const popup = btn.closest('[data-popup-container]');
+        const selectContentID = btn.getAttribute('data-select-delivery-label')
+        const deliveryContent = popup.querySelector('.active[data-select-delivery-wrapper]');
+        const selectContent = popup.querySelector(`[data-select-delivery-wrapper="${selectContentID}"]`);
+
+        deliveryContent.classList.remove('active');
+        selectContent.classList.add('active');
     }
 })
 
@@ -723,6 +742,129 @@ document.addEventListener('click', e => {
 
         btn.classList.toggle('open');
         submenu.classList.toggle('active');
+    }
+})
+
+
+document.addEventListener('mouseover',  e => {
+    const btn = e.target.closest('[data-grade-star-label] input');
+
+    if (btn) {
+        const allItem = document.querySelectorAll('[data-grade-star-label]');
+        let currentIndex;
+
+         allItem.forEach( (item, index) => {
+            if (btn === item.querySelector('input')) {
+                currentIndex = index;
+            }
+        })
+        allItem.forEach( (item, index) => {
+            if (index  <= currentIndex) {
+                item.classList.add('active');
+            }
+        })
+    }
+    else {
+        const allItem = document.querySelectorAll('[data-grade-star-label]');
+
+        allItem.forEach( (item, index) => {
+            item.classList.remove('active');
+        })
+    }
+})
+document.addEventListener('mouseover',  e => {
+    const btn = e.target.closest('[data-grade-star-label] input');
+
+    if (btn) {
+        const allItem = document.querySelectorAll('[data-grade-star-label]');
+        let currentIndex;
+
+         allItem.forEach( (item, index) => {
+            if (btn === item.querySelector('input')) {
+                currentIndex = index;
+            }
+        })
+        allItem.forEach( (item, index) => {
+            if (index  > currentIndex) {
+                item.classList.remove('active');
+            }
+        })
+    }
+})
+document.addEventListener('click',  e => {
+    const btn = e.target.closest('[data-grade-star-label] input');
+
+    if (btn && btn.checked) {
+        const wrapper = btn.closest('[data-grade-wrapper]');
+        const allItem = wrapper.querySelectorAll('[data-grade-star-label]');
+        let currentIndex;
+
+        allItem.forEach( (item, index) => {
+            if (btn === item.querySelector('input')) {
+                currentIndex = index;
+            }
+        })
+        allItem.forEach( (item, index) => {
+            if (btn !== item.querySelector('input')) {
+                item.querySelector('input').checked = false;
+            }
+            if (index < currentIndex){
+                item.classList.add('active');
+            }
+        })
+    }
+})
+document.addEventListener('mouseover',  e => {
+    const wrapper = e.target.closest('[data-grade-wrapper]');
+    const checkedItem = document.querySelector('[data-grade-star-label] input:checked');
+
+    if (!wrapper) {
+        const allItem = document.querySelectorAll('[data-grade-star-label]');
+        let currentIndex;
+
+        allItem.forEach( (item, index) => {
+            if (checkedItem === item.querySelector('input')) {
+                currentIndex = index;
+            }
+        })
+        allItem.forEach( (item, index) => {
+            if (index  <= currentIndex) {
+                item.classList.add('active');
+            }
+            else if (index  > currentIndex) {
+                item.classList.remove('active');
+            }
+        })
+    }
+})
+
+
+document.addEventListener('input', e => {
+    const input = e.target.closest('[data-popup-search-input]');
+
+    if (input.value) {
+        const wrapper = input.closest('[data-popup-search-section]');
+        const itemsWrapper = wrapper.querySelector('[data-popup-search-items-wrapper]');
+
+        itemsWrapper.classList.add('active')
+    } else {
+        const wrapper = input.closest('[data-popup-search-section]');
+        const itemsWrapper = wrapper.querySelector('[data-popup-search-items-wrapper]');
+
+        itemsWrapper.classList.remove('active')
+    }
+})
+
+document.addEventListener('click', e => {
+    const item = e.target.closest('[data-popup-search-items-wrapper] span');
+
+    if (item) {
+        const wrapper = item.closest('[data-popup-search-section]');
+        const input = wrapper.querySelector('[data-popup-search-input]');
+        const itemsWrapper = item.closest('[data-popup-search-items-wrapper]');
+
+        input.value = item.textContent;
+        itemsWrapper.classList.remove('active')
     }
 })
 

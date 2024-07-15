@@ -17,7 +17,7 @@ breadcrumb([['url' => '/basket.php', 'name' => 'Оформление заказ�
 
 <section class="core-container basket" data-basket-have-product>
     <h1 class="basket_header site-header">Оформление</h1>
-    <form action="/form" method="post" class="basket_form">
+    <form action="/form" method="post" class="basket_form" data-basket-form>
         <div class="basket_form-content">
             <p class="basket_total-products-stock">
                 Товары
@@ -72,56 +72,134 @@ breadcrumb([['url' => '/basket.php', 'name' => 'Оформление заказ�
                 </div>
             </div>
         </div>
-         <div class="basket_form-data active" data-basket-form-data>
-            <p class="basket_form-data_title">форма для заявки</p>
-            <div class="basket_form-data_content">
-                <label class="basket_form-data_label">
-                    <span>Имя*</span>
-                    <input type="text" placeholder="Иван">
-                </label>
-                <label class="basket_form-data_label">
-                    <span>Телефон*</span>
-                    <input type="text" placeholder="8 900 000 00 00">
-                </label>
-                <div class="basket_form-data_delivery">
-                    <p class="basket_form-data_delivery_title">Выберите способ получения</p>
-                    <div class="basket_form-data_delivery_label-wrapper" data-basket-form-data-delivery-label-wrapper>
-                        <label class="basket_form-data_delivery_label active" data-select-delivery-label>
-                            Самовывоз
-                            <input type="radio" name="select-delivery" value="Самовывоз">
-                        </label>
-                        <label class="basket_form-data_delivery_label" data-select-delivery-label>
-                            Доставка
-                            <input type="radio" name="select-delivery" value="Доставка">
-                        </label>
-                    </div>
-                    <div class="select-section" data-select-section>
-                        <span class="select-section_value" data-select-section-value>select</span>
-                        <div class="select-section_drop-menu" data-select-section-drop-menu>
-                            <div class="select-section_item-wrapper">
-                                <?php foreach ([1,2,3,4,5,6,7,8,9,10,11,12,13] as $item) { ?>
-                                    <label class="select-section_item_label">
-                                        option <?= $item ?>
-                                        <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
-                                    </label>
-                                <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <label class="basket_form-data_label">
-                    Оставьте комментарий
-                    <textarea name="" id="" cols="30" rows="4" placeholder="Комментарий"></textarea>
-                </label>
-                <button class="basket_form-submit btn-green" data-basket-form-submit>Оформить заявку</button>
-            </div>
+         <div class="basket_form-data">
+<!--            <p class="basket_form-data_title">форма для заявки</p>-->
+<!--            <div class="basket_form-data_content">-->
+<!--                <label class="basket_form-data_label">-->
+<!--                    <span>Имя*</span>-->
+<!--                    <input type="text" placeholder="Иван">-->
+<!--                </label>-->
+<!--                <label class="basket_form-data_label">-->
+<!--                    <span>Телефон*</span>-->
+<!--                    <input type="text" placeholder="8 900 000 00 00">-->
+<!--                </label>-->
+<!--                <div class="basket_form-data_delivery">-->
+<!--                    <p class="basket_form-data_delivery_title">Выберите способ получения</p>-->
+<!--                    <div class="basket_form-data_delivery_label-wrapper" data-basket-form-data-delivery-label-wrapper>-->
+<!--                        <label class="basket_form-data_delivery_label active" data-select-delivery-label>-->
+<!--                            Самовывоз-->
+<!--                            <input type="radio" name="select-delivery" value="Самовывоз">-->
+<!--                        </label>-->
+<!--                        <label class="basket_form-data_delivery_label" data-select-delivery-label>-->
+<!--                            Доставка-->
+<!--                            <input type="radio" name="select-delivery" value="Доставка">-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="select-section" data-select-section>-->
+<!--                        <span class="select-section_value" data-select-section-value>select</span>-->
+<!--                        <div class="select-section_drop-menu" data-select-section-drop-menu>-->
+<!--                            <div class="select-section_item-wrapper">-->
+<!--                                --><?php //foreach ([1,2,3,4,5,6,7,8,9,10,11,12,13] as $item) { ?>
+<!--                                    <label class="select-section_item_label">-->
+<!--                                        option --><?php //= $item ?>
+<!--                                        <input type="radio" value="option --><?php //= $item ?><!--" name="select" data-select-section-item>-->
+<!--                                    </label>-->
+<!--                                --><?php //} ?>
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <label class="basket_form-data_label">-->
+<!--                    Оставьте комментарий-->
+<!--                    <textarea name="" id="" cols="30" rows="4" placeholder="Комментарий"></textarea>-->
+<!--                </label>-->
+<!--                <button class="basket_form-submit btn-green" data-basket-form-submit>Оформить заявку</button>-->
+<!--            </div>-->
+
+<!--             <section class="popup-wrapper" data-popup-wrapper="order-products">-->
+                 <div class="popup-container active" data-popup-container data-basket-form-data>
+                     <div class="popup_head">
+                         <div class="popup_header-wrapper">
+                             <h2 class="popup_header">форма для заявки<</h2>
+                         </div>
+                         <div class="popup_label-wrapper">
+                             <label class="popup_label">
+                                 Имя*
+                                 <input type="text" placeholder="Имя">
+                             </label>
+                             <label class="popup_label">
+                                 Телефон*
+                                 <input type="tel" placeholder="8 900 000 00 00" pattern="[0-9]{12}">
+                             </label>
+                             <div class="popup_wrapper-data_delivery">
+                                 <p class="popup_wrapper-data_delivery_title">Выберите способ получения</p>
+                                 <div class="popup_wrapper-data_delivery_label-wrapper" data-delivery-label-wrapper>
+                                     <label class="popup_wrapper-data_delivery_label active" data-select-delivery-label="delivery">
+                                         Самовывоз
+                                         <input type="radio" name="select-delivery" value="Самовывоз">
+                                     </label>
+                                     <label class="popup_wrapper-data_delivery_label" data-select-delivery-label="pickup">
+                                         Доставка
+                                         <input type="radio" name="select-delivery" value="Доставка">
+                                     </label>
+                                 </div>
+                                 <div class="select-section active" data-select-section data-select-delivery-wrapper="delivery">
+                                     <span class="select-section_value" data-select-section-value>Пункты выдачи заказов</span>
+                                     <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                         <div class="select-section_item-wrapper">
+                                             <?php foreach ([1,2,3,4,5,6,7,8,9,10,11,12,13] as $item) { ?>
+                                                 <div class="select-section_item" data-select-section-item>
+                                                     <label class="select-section_item_label">
+                                                         <span></span>
+                                                         <input type="radio" value="ул. Посадская, д 23 (м. Геологическая" name="select">
+                                                     </label>
+                                                     <div class="select-section_item_title-wrapper">
+                                                         <span class="select-section_item_title" data-select-section-item-value>ул. Посадская, д 23 (м. Геологическая)</span>
+                                                         <p class="select-section_item_address">
+                                                             Режим работы: <span>Ежедневно 10:00 - 19:00</span>
+                                                         </p>
+                                                     </div>
+                                                 </div>
+                                             <?php } ?>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="popup_search-section active_" data-select-delivery-wrapper="pickup" data-popup-search-section>
+                                     <label class="popup_label">
+                                         <input type="text" placeholder="Адрес доставки" data-popup-search-input>
+                                     </label>
+                                     <div class="popup_search-section_items-wrapper" data-popup-search-items-wrapper>
+                                         <span>Г. Екатеринбург, Ул. Ткачей</span>
+                                     </div>
+                                 </div>
+                             </div>
+                             <label class="popup_label">
+                                 Напишите отзыв
+                                 <textarea name="" id="" placeholder="Здесь может быть ваш отзыв"></textarea>
+                             </label>
+                         </div>
+                     </div>
+                     <div class="popup_footer">
+<!--                         <button class="popup_btn-submit btn-green" data-popup-btn-submit>Оставить заявку</button>-->
+                         <button class="popup_btn-submit btn-green" data-basket-form-submit>Оставить заявку</button>
+                     </div>
+                 </div>
+                 <div class="success-container" data-success-container data-basket-successful>
+                     <span class="success-container_icon"></span>
+                     <h2 class="popup_header">
+                         Заявка оформлена!
+                     </h2>
+                     <p class="basket-successful_description">Ожидайте звонка менеджера или позвоните <br> по номеру для уточнения деталей заказа</p>
+                     <a class="basket-successful_link" href="tel:89000000000">8 900 000 00 00</a>
+                 </div>
+<!--             </section>-->
         </div>
-        <div class="basket-successful" data-basket-successful>
-            <span class="basket-successful_icon"></span>
-            <span class="basket-successful_title">Заявка оформлена!</span>
-            <p class="basket-successful_description">Ожидайте звонка менеджера или позвоните по номеру для уточнения деталей заказа</p>
-            <a class="basket-successful_link" href="tel:89000000000">8 900 000 00 00</a>
-        </div>
+<!--        <div class="basket-successful" data-basket-successful>-->
+<!--            <span class="basket-successful_icon"></span>-->
+<!--            <span class="basket-successful_title">Заявка оформлена!</span>-->
+<!--            <p class="basket-successful_description">Ожидайте звонка менеджера или позвоните по номеру для уточнения деталей заказа</p>-->
+<!--            <a class="basket-successful_link" href="tel:89000000000">8 900 000 00 00</a>-->
+<!--        </div>-->
     </form>
 </section>
 
