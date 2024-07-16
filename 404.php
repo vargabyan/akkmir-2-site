@@ -29,7 +29,7 @@ breadcrumb([['url' => '', 'name' => '404']]);
                     <img class="catalog_need-help_employee-img" src="/images/employee-image-1.png" alt="image">
                     <p class="catalog_need-help_description">Нам опытный специалист проконсультирует вас и ответит на все интересующие вопросы</p>
                 </div>
-                <a class="catalog_need-help_btn-get-consultation" href="catalog.php">Получить консультацию</a>
+                <button class="catalog_need-help_btn-get-consultation" data-order-popup="get-a-consultation">Получить консультацию</button>
             </div>
         </div>
         <div class="catalog_items-wrapper">
@@ -37,9 +37,9 @@ breadcrumb([['url' => '', 'name' => '404']]);
                 <span class="catalog_item_title">Аккумуляторы и клеммы</span>
                 <img class="catalog_item_img" src="/images/catalog-image-2.png" alt="image">
                 <div class="catalog_item_tags-wrapper">
-                    <span>Автомобильные</span>
-                    <span>Мотоциклетные</span>
-                    <span>Тяговые</span>
+                    <a href="product-showcase.php">Автомобильные</a>
+                    <a href="product-showcase.php">Мотоциклетные</a>
+                    <a href="product-showcase.php">Тяговые</a>
                     <a class="catalog_item_more-tags" href="catalog.php">Еще +4</a>
                 </div>
             </div>
@@ -47,11 +47,11 @@ breadcrumb([['url' => '', 'name' => '404']]);
                 <span class="catalog_item_title">Масла</span>
                 <img class="catalog_item_img" src="/images/catalog-image-8.png" alt="image">
                 <div class="catalog_item_tags-wrapper">
-                    <span>Моторные</span>
-                    <span>АКПП / ГУР</span>
-                    <span>Трансмиссионные</span>
-                    <span>Гидравлические</span>
-                    <span>Промывочные</span>
+                    <a href="product-showcase.php">Моторные</a>
+                    <a href="product-showcase.php">АКПП / ГУР</a>
+                    <a href="product-showcase.php">Трансмиссионные</a>
+                    <a href="product-showcase.php">Гидравлические</a>
+                    <a href="product-showcase.php">Промывочные</a>
                     <a class="catalog_item_more-tags" href="catalog.php">Еще +4</a>
                 </div>
             </div>
@@ -59,19 +59,19 @@ breadcrumb([['url' => '', 'name' => '404']]);
                 <span class="catalog_item_title">Спец. жидкости</span>
                 <img class="catalog_item_img" src="/images/catalog-image-1.png" alt="image">
                 <div class="catalog_item_tags-wrapper">
-                    <span>Автомобильные</span>
-                    <span>Мотоциклетные</span>
-                    <span>Тяговые</span>
-                    <span>Клеммы и провода</span>
+                    <a href="product-showcase.php">Автомобильные</a>
+                    <a href="product-showcase.php">Мотоциклетные</a>
+                    <a href="product-showcase.php">Тяговые</a>
+                    <a href="product-showcase.php">Клеммы и провода</a>
                 </div>
             </div>
             <div class="catalog_item">
                 <span class="catalog_item_title">Автоэлектроника и элементы питания</span>
                 <img class="catalog_item_img" src="/images/catalog-image-3.png" alt="image">
                 <div class="catalog_item_tags-wrapper">
-                    <span>Антифризы</span>
-                    <span>Стеклоомывающие жидкости</span>
-                    <span>Мочевина</span>
+                    <a href="product-showcase.php">Антифризы</a>
+                    <a href="product-showcase.php">Стеклоомывающие жидкости</a>
+                    <a href="product-showcase.php">Мочевина</a>
                     <a class="catalog_item_more-tags" href="catalog.php">Еще +4</a>
                 </div>
             </div>
@@ -79,18 +79,18 @@ breadcrumb([['url' => '', 'name' => '404']]);
                 <span class="catalog_item_title">ИБП, стабилизаторы, инверторы</span>
                 <img class="catalog_item_img" src="/images/catalog-image-7.png" alt="image">
                 <div class="catalog_item_tags-wrapper">
-                    <span>ИПБ</span>
-                    <span>Стабилизаторы</span>
-                    <span>Инверторы</span>
+                    <a href="product-showcase.php">ИПБ</a>
+                    <a href="product-showcase.php">Стабилизаторы</a>
+                    <a href="product-showcase.php">Инверторы</a>
                 </div>
             </div>
             <div class="catalog_item">
                 <span class="catalog_item_title">Автокосметика и автохимия</span>
                 <img class="catalog_item_img" src="/images/catalog-image-4.png" alt="image">
                 <div class="catalog_item_tags-wrapper">
-                    <span>Присадки</span>
-                    <span>Очистители</span>
-                    <span>Герметики</span>
+                    <a href="product-showcase.php">Присадки</a>
+                    <a href="product-showcase.php">Очистители</a>
+                    <a href="product-showcase.php">Герметики</a>
                     <a class="catalog_item_more-tags" href="catalog.php">Еще +7</a>
                 </div>
             </div>
@@ -98,10 +98,10 @@ breadcrumb([['url' => '', 'name' => '404']]);
                 <span class="catalog_item_title">Инструменты</span>
                 <img class="catalog_item_img" src="/images/catalog-image-6.png" alt="image">
                 <div class="catalog_item_tags-wrapper">
-                    <span>Ключи</span>
-                    <span>Удлиннители, воротки, головки</span>
-                    <span>Отвёртки</span>
-                    <span>Ручной инструмент</span>
+                    <a href="product-showcase.php">Ключи</a>
+                    <a href="product-showcase.php">Удлиннители, воротки, головки</a>
+                    <a href="product-showcase.php">Отвёртки</a>
+                    <a href="product-showcase.php">Ручной инструмент</a>
                     <a class="catalog_item_more-tags" href="catalog.php">Еще +12</a>
                 </div>
             </div>
@@ -109,12 +109,12 @@ breadcrumb([['url' => '', 'name' => '404']]);
                 <span class="catalog_item_title">Автоаксессуары</span>
                 <img class="catalog_item_img" src="/images/catalog-image-5.png" alt="image">
                 <div class="catalog_item_tags-wrapper">
-                    <span>Фонари</span>
-                    <span>Автоаксессуары в багажник</span>
-                    <span>Термочехлы</span>
-                    <span>Ароматизаторы воздуха</span>
-                    <span>Перчатки</span>
-                    <span>Автоаксессуары в салон</span>
+                    <a href="product-showcase.php">Фонари</a>
+                    <a href="product-showcase.php">Автоаксессуары в багажник</a>
+                    <a href="product-showcase.php">Термочехлы</a>
+                    <a href="product-showcase.php">Ароматизаторы воздуха</a>
+                    <a href="product-showcase.php">Перчатки</a>
+                    <a href="product-showcase.php">Автоаксессуары в салон</a>
                 </div>
             </div>
         </div>

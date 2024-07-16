@@ -100,11 +100,11 @@ breadcrumb([['url' => '', 'name' => 'доставка и оплата']]);
                 и ответит на все интересующие вопросы
             </p>
         </div>
-        <button class="help_ask-question_btn">задать вопрос</button>
+        <button class="help_ask-question_btn" data-order-popup="question-to-an-experienced-specialist">задать вопрос</button>
     </div>
     <div class="help_you-choose-product">
         <span class="help_you-choose-product_title">Подберите для&nbsp;себя необходимый товар</span>
-        <button class="help_you-choose-product_btn">Перейти в каталог</button>
+        <a class="help_you-choose-product_btn" href="catalog.php">Перейти в каталог</a>
     </div>
 </section>
 

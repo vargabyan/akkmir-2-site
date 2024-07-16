@@ -9,11 +9,11 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
 <section class="core-container product-showcase">
     <h1 class="product-showcase_header site-header">Автомобильные <br> аккумуляторы</h1>
     <div class="product-showcase_tags-wrapper">
-        <span>Аккумуляторы автомобильные</span>
-        <span>Аккумуляторы мотоциклетные</span>
-        <span>Аккумуляторы промышленные</span>
-        <span>Клеммы и провода</span>
-        <span>Крепёж для АКБ</span>
+        <a href="product-showcase.php">Аккумуляторы автомобильные</a>
+        <a href="product-showcase.php">Аккумуляторы мотоциклетные</a>
+        <a href="product-showcase.php">Аккумуляторы промышленные</a>
+        <a href="product-showcase.php">Клеммы и провода</a>
+        <a href="product-showcase.php">Крепёж для АКБ</a>
     </div>
     <div class="product-showcase_contents">
         <div class="product-showcase_filter-wrapper">
@@ -255,7 +255,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
             <div class="product-showcase_product-items">
                 <?php foreach ([1,2,3,4,5,6,7,8,9,10,11,12] as $item) { ?>
                     <div class="popular-goods_item">
-                        <a class="popular-goods_item_core-link" href="product-showcase"></a>
+                        <a class="popular-goods_item_core-link" href="product-card.php"></a>
                         <div class="popular-goods_item_img-wrapper">
                             <span>Товар недели</span>
                             <img src="/images/popular-goods-img-1.png" alt="image">
@@ -284,7 +284,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
                                 <a href=""> 12 пунктах выдачи заказов</a>
                             </div>
                             <div class="popular-goods_item_btn-wrapper">
-                                <button class="btn-green">Купить в 1 клик</button>
+                                <button class="btn-green" data-order-popup="Buy-in-one-click">Купить в 1 клик</button>
                                 <button class="btn-invisible-with-basket btn-invisible-with-border"><span>В корзину</span></button>
                             </div>
                         </div>
@@ -354,7 +354,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
                     <img src="/images/question-consultation-image-1.png" alt="image">
                     Нам опытный специалист проконсультирует вас и ответит на все интересующие вопросы
                 </div>
-                <button class="questions_help-item_btn-consultation">Получить консультацию</button>
+                <button class="questions_help-item_btn-consultation" data-order-popup="get-a-consultation">Получить консультацию</button>
             </div>
         </div>
     </div>

@@ -123,7 +123,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                 </div>
                 <div class="product-card_shop_btn-wrapper">
                     <button class="product-card_shop_btn_add-basket btn-green">Добавить в корзину</button>
-                    <button class="product-card_shop_btn_buy btn-invisible-with-border">Купить в 1 клик</button>
+                    <button type="button" class="product-card_shop_btn_buy btn-invisible-with-border" data-order-popup="Buy-in-one-click">Купить в 1 клик</button>
                 </div>
             </form>
             <div class="product-card_shop_delivery">
@@ -143,7 +143,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                 <img src="/images/employee-image-3.png" alt="image">
                 <p>Наш менеджер проконсультирует вас и ответит на все интересующие вопросы</p>
             </div>
-            <button class="product-card_help_btn">заказать подбор</button>
+            <button class="product-card_help_btn" data-order-popup="order-selection">заказать подбор</button>
         </div>
 
         <div class="product-card_description">
@@ -322,6 +322,7 @@ $response_data_reviews = [
                 <?php foreach ([1,2,3,4,5] as $item) { ?>
                     <div class="swiper-slide">
                         <div class="popular-goods_item">
+                            <a class="popular-goods_item_core-link" href="product-card.php"></a>
                             <div class="popular-goods_item_img-wrapper">
                                 <span>Товар недели</span>
                                 <img src="/images/popular-goods-img-1.png" alt="image">
@@ -350,7 +351,7 @@ $response_data_reviews = [
                                     <a href=""> 12 пунктах выдачи заказов</a>
                                 </div>
                                 <div class="popular-goods_item_btn-wrapper">
-                                    <button class="btn-green">Купить в 1 клик</button>
+                                    <button class="btn-green" data-order-popup="Buy-in-one-click">Купить в 1 клик</button>
                                     <button class="btn-invisible-with-basket btn-invisible-with-border"><span>В корзину</span></button>
                                 </div>
                             </div>

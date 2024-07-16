@@ -158,7 +158,7 @@ $response_data_reviews = [
                     <img src="/images/question-consultation-image-1.png" alt="image">
                     Наш опытный специалист проконсультирует вас и ответит на все интересующие вопросы
                 </div>
-                <button class="questions_help-item_btn-consultation">Получить консультацию</button>
+                <button class="questions_help-item_btn-consultation" data-order-popup="get-a-consultation">Получить консультацию</button>
             </div>
         </div>
     </div>
