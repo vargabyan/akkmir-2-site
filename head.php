@@ -34,7 +34,7 @@
     </div>
     <div class="header_panel">
         <a class="logo-wrapper" href="/">
-            <p class="logo">Мега</p>
+            <p class="logo">Тор</p>
             <p class="logo_text">Интернет-магазин <br> аккумуляторов, <br> автомасел и автотоваров</p>
         </a>
         <div class="header_panel_btn-catalog-wrapper">

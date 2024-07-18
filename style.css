@@ -330,19 +330,22 @@ table {
     display: flex;
     align-items: center;
     gap: 4px;
+    padding: 8px 12px;
+    border-radius: 13px;
+    border: solid 1px #C2C2C2;
+    background-color: #ffffff;
 
     font-size: 36px;
+    font-weight: 600;
 }
 
 .logo:after {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FFF;
     content: 'Ватт';
     border-radius: 10px;
-    background-color: #38BB5A;
-    padding: 6px 12px 3px 10px;
+    color: #38BB5A;
 }
 
 .logo_text {
@@ -5031,12 +5034,6 @@ table {
     .logo {
         font-size: 19px;
     }
-
-    .logo:after {
-        border-radius: 5px;
-        padding: 5px 3px 2px 3px;
-    }
-
 
 
     .banner {
