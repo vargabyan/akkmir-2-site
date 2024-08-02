@@ -1,5 +1,5 @@
-<!--<section class="popup-wrapper" data-popup-wrapper="Selection-of-batteries-by-a-specialist">-->
-<!--    <form action="" class="popup-container" data-popup-container>-->
+<!--<section class="popup-wrapper active_" data-popup-wrapper="Selection-of-batteries-by-a-specialist">-->
+<!--    <form action="" class="popup-container active_" data-popup-container>-->
 <!--        <button type="button" class="popup_btn-close" data-popup-btn-close></button>-->
 <!--        <h2 class="popup_header">-->
 <!--            Подбор АКБ специалистом-->
@@ -223,13 +223,13 @@
 <!--                        <div class="select-section_drop-menu" data-select-section-drop-menu>-->
 <!--                            <div class="select-section_item-wrapper">-->
 <!--                                --><?php //foreach ([1,2,3,4,5,6,7,8,9,10,11,12,13] as $item) { ?>
-<!--                                        <div class="select-section_item" data-select-section-item>-->
+<!--                                        <div class="select-section_item" data-popup-select-section-item>-->
 <!--                                            <label class="select-section_item_label">-->
 <!--                                                <span></span>-->
 <!--                                                <input type="radio" value="ул. Посадская, д 23 (м. Геологическая" name="select">-->
 <!--                                            </label>-->
 <!--                                            <div class="select-section_item_title-wrapper">-->
-<!--                                                <span class="select-section_item_title" data-select-section-item-value>ул. Посадская, д 23 (м. Геологическая)</span>-->
+<!--                                                <span class="select-section_item_title" data-popup-select-section-item-value>ул. Посадская, д 23 (м. Геологическая)</span>-->
 <!--                                                <p class="select-section_item_address">-->
 <!--                                                    Режим работы: <span>Ежедневно 10:00 - 19:00</span>-->
 <!--                                                </p>-->
@@ -311,27 +311,27 @@
                         <span class="select-section_value" data-select-section-value>Пункты выдачи заказов</span>
                         <div class="select-section_drop-menu" data-select-section-drop-menu>
                             <div class="select-section_item-wrapper">
-                                <div class="select-section_item" data-select-section-item>
+                                <div class="select-section_item" data-popup-select-section-item>
                                     <label class="select-section_item_label_address-delivery">
-                                        <span class="select-section_item_label_address-delivery_title" data-select-section-item-value>ул. Посадская, д 23 (м. Геологическая)</span>
+                                        <span class="select-section_item_label_address-delivery_title" data-popup-select-section-item-value>ул. Посадская, д 23 (м. Геологическая)</span>
                                         <input type="radio" value="ул. Посадская, д 23 (м. Геологическая)" name="select">
                                         <span class="select-section_item_address-delivery_status">
                                             Доступно: <span class="redd">Мало</span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="select-section_item" data-select-section-item>
+                                <div class="select-section_item" data-popup-select-section-item>
                                     <label class="select-section_item_label_address-delivery">
-                                        <span class="select-section_item_label_address-delivery_title" data-select-section-item-value>ул. Посадская, д 23 (м. Геологическая)</span>
+                                        <span class="select-section_item_label_address-delivery_title" data-popup-select-section-item-value>ул. Посадская, д 23 (м. Геологическая)</span>
                                         <input type="radio" value="ул. Посадская, д 23 (м. Геологическая)" name="select">
                                         <span class="select-section_item_address-delivery_status">
                                             Доступно: <span class="yellow">Достаточно</span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="select-section_item" data-select-section-item>
+                                <div class="select-section_item" data-popup-select-section-item>
                                     <label class="select-section_item_label_address-delivery">
-                                        <span class="select-section_item_label_address-delivery_title" data-select-section-item-value>ул. Посадская, д 23 (м. Геологическая)</span>
+                                        <span class="select-section_item_label_address-delivery_title" data-popup-select-section-item-value>ул. Посадская, д 23 (м. Геологическая)</span>
                                         <input type="radio" value="ул. Посадская, д 23 (м. Геологическая)" name="select">
                                         <span class="select-section_item_address-delivery_status">
                                             Доступно: <span>Много</span>

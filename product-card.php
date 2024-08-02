@@ -43,7 +43,20 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                 <ul class="product-card_data_list">
                     <li>
                         <div class="product-card_data_item">
-                            <span class="product-card_data_item_properties icon-exclamation-point">Гарантия</span><span class="product-card_data_item_line"></span><span class="product-card_data_item_values">36 месяцев</span>
+                            <span class="product-card_data_item_properties">Гарантия</span>
+                            <div class="clue-wrapper" data-clue-wrapper>
+                                <button class="clue-icon clue-btn-open" data-clue-btn-open></button>
+                                <div class="clue-content" data-clue-content>
+                                    <button class="btn-close clue-btn-close" data-clue-btn-close></button>
+                                    <div class="clue-text">
+                                        <p>
+                                            На все аккумуляторные батареи, реализуемые магазином, распространяется фирменная гарантия.  Срок гарантии исчисляется с момента продажи
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="product-card_data_item_line"></span>
+                            <span class="product-card_data_item_values">36 месяцев</span>
                         </div>
                     </li>
                     <li>
@@ -63,7 +76,19 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                     </li>
                     <li>
                         <div class="product-card_data_item">
-                            <span class="product-card_data_item_properties icon-exclamation-point">Полярность</span><span class="product-card_data_item_line"></span><span class="product-card_data_item_values">Прямая</span>
+                            <span class="product-card_data_item_properties">Полярность</span>
+                            <div class="clue-wrapper" data-clue-wrapper>
+                                <button class="clue-icon clue-btn-open" data-clue-btn-open></button>
+                                <div class="clue-content" data-clue-content>
+                                    <button class="btn-close clue-btn-close" data-clue-btn-close></button>
+                                    <div class="clue-text">
+                                        <p>Прямая + - — плюс слева, минус справа. Обозначается как «п.п.» или «1»</p>
+                                        <p>Обратная - + — минус слева, плюс справа. Обозначается как «о.п.» или «0».</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="product-card_data_item_line"></span>
+                            <span class="product-card_data_item_values">Прямая</span>
                         </div>
                     </li>
                     <li>
@@ -162,7 +187,20 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                 <ul class="product-card_data_list">
                     <li>
                         <div class="product-card_data_item">
-                            <span class="product-card_data_item_properties icon-exclamation-point">Гарантия</span><span class="product-card_data_item_line"></span><span class="product-card_data_item_values">36 месяцев</span>
+                            <span class="product-card_data_item_properties">Гарантия</span>
+                            <div class="clue-wrapper" data-clue-wrapper>
+                                <button class="clue-icon clue-btn-open" data-clue-btn-open></button>
+                                <div class="clue-content" data-clue-content>
+                                     <button class="btn-close clue-btn-close" data-clue-btn-close></button>
+                                    <div class="clue-text">
+                                        <p>
+                                            На все аккумуляторные батареи, реализуемые магазином, распространяется фирменная гарантия.  Срок гарантии исчисляется с момента продажи
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="product-card_data_item_line"></span>
+                            <span class="product-card_data_item_values">36 месяцев</span>
                         </div>
                     </li>
                     <li>
@@ -182,7 +220,19 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                     </li>
                     <li>
                         <div class="product-card_data_item">
-                            <span class="product-card_data_item_properties icon-exclamation-point">Полярность</span><span class="product-card_data_item_line"></span><span class="product-card_data_item_values">Прямая</span>
+                            <span class="product-card_data_item_properties icon-exclamation-point">Полярность</span>
+                            <div class="clue-wrapper" data-clue-wrapper>
+                                <button class="clue-icon clue-btn-open" data-clue-btn-open></button>
+                                <div class="clue-content" data-clue-content>
+                                    <button class="btn-close clue-btn-close" data-clue-btn-close></button>
+                                    <div class="clue-text">
+                                        <p>Прямая + - — плюс слева, минус справа. Обозначается как «п.п.» или «1»</p>
+                                        <p>Обратная - + — минус слева, плюс справа. Обозначается как «о.п.» или «0».</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="product-card_data_item_line"></span>
+                            <span class="product-card_data_item_values">Прямая</span>
                         </div>
                     </li>
                     <li>
@@ -204,7 +254,20 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                 <ul class="product-card_data_list">
                     <li>
                         <div class="product-card_data_item">
-                            <span class="product-card_data_item_properties icon-exclamation-point">Гарантия</span><span class="product-card_data_item_line"></span><span class="product-card_data_item_values">36 месяцев</span>
+                            <span class="product-card_data_item_properties">Гарантия</span>
+                            <div class="clue-wrapper" data-clue-wrapper>
+                                <button class="clue-icon clue-btn-open" data-clue-btn-open></button>
+                                <div class="clue-content" data-clue-content>
+                                    <button class="btn-close clue-btn-close" data-clue-btn-close></button>
+                                    <div class="clue-text">
+                                        <p>
+                                            На все аккумуляторные батареи, реализуемые магазином, распространяется фирменная гарантия.  Срок гарантии исчисляется с момента продажи
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="product-card_data_item_line"></span>
+                            <span class="product-card_data_item_values">36 месяцев</span>
                         </div>
                     </li>
                     <li>
@@ -224,7 +287,19 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                     </li>
                     <li>
                         <div class="product-card_data_item">
-                            <span class="product-card_data_item_properties icon-exclamation-point">Полярность</span><span class="product-card_data_item_line"></span><span class="product-card_data_item_values">Прямая</span>
+                            <span class="product-card_data_item_properties">Полярность</span>
+                            <div class="clue-wrapper" data-clue-wrapper>
+                                <button class="clue-icon clue-btn-open" data-clue-btn-open></button>
+                                <div class="clue-content" data-clue-content>
+                                    <button class="btn-close clue-btn-close" data-clue-btn-close></button>
+                                    <div class="clue-text">
+                                        <p>Прямая + - — плюс слева, минус справа. Обозначается как «п.п.» или «1»</p>
+                                        <p>Обратная - + — минус слева, плюс справа. Обозначается как «о.п.» или «0».</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="product-card_data_item_line"></span>
+                            <span class="product-card_data_item_values">Прямая</span>
                         </div>
                     </li>
                     <li>

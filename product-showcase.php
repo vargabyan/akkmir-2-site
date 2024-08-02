@@ -64,7 +64,8 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
                                     <div class="select-section_item-wrapper">
                                         <?php foreach ([1,2,3,4,5,6] as $item) { ?>
                                             <label class="select-section_item_label">
-                                                option <?= $item ?>
+                                                <span>option <?= $item ?></span>
+
                                                 <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
                                             </label>
                                         <?php } ?>

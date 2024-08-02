@@ -1,8 +1,12 @@
 new Swiper('[data-banner-swiper]', {
     speed: 1000,
     loop: true,
+    autoplay: {
+        delay: 3000,
+    },
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
     },
 });
 
@@ -136,14 +140,14 @@ document.addEventListener('click', e => {
 })
 
 document.addEventListener('click', e => {
-    const selectItem = e.target.closest('[data-select-section-item]');
+    const selectItem = e.target.closest('[data-popup-select-section-item]');
 
     if (selectItem) {
         const wrapper = selectItem.closest('[data-select-section]');
         const selectValue = wrapper.querySelector('[data-select-section-value]');
-        const itemValue = wrapper.querySelector('[data-select-section-item-value]');
+        const itemValue = wrapper.querySelector('[data-popup-select-section-item-value]');
         const itemWrapper = wrapper.querySelector('[data-select-section-drop-menu]');
-        const allItems = wrapper.querySelectorAll('[data-select-section-item]');
+        const allItems = wrapper.querySelectorAll('[data-popup-select-section-item]');
 
         selectItem.querySelector('input').checked = true;
         allItems.forEach( item => {
@@ -154,6 +158,27 @@ document.addEventListener('click', e => {
         selectValue.classList.remove('active');
         selectValue.classList.add('color');
         selectValue.textContent = itemValue.textContent;
+    }
+})
+
+document.addEventListener('click', e => {
+    const selectItem = e.target.closest('[data-select-section-item]');
+
+    if (selectItem) {
+        const wrapper = selectItem.closest('[data-select-section]');
+        const selectValue = wrapper.querySelector('[data-select-section-value]');
+        const itemWrapper = wrapper.querySelector('[data-select-section-drop-menu]');
+        const allItems = wrapper.querySelectorAll('[data-select-section-item]');
+
+        selectItem.checked = true;
+        allItems.forEach( item => {
+            item.parentNode.classList.remove('active');
+        });
+        selectItem.parentNode.classList.add('active');
+        itemWrapper.classList.remove('active');
+        selectValue.classList.remove('active');
+        selectValue.classList.add('color');
+        selectValue.textContent = selectItem.value;
     }
 })
 
@@ -376,7 +401,11 @@ document.addEventListener('click', e => {
         allSelect.forEach(item => {
             const value = item.querySelector('[data-select-section-value]');
             const inputChecked = item.querySelector('[data-select-section-drop-menu] input:checked');
+            const allItems = form.querySelectorAll('[data-select-section-item]');
 
+            allItems.forEach( item => {
+                item.parentNode.classList.remove('active');
+            });
             value.textContent = 'Выбрать';
             value.classList.remove('active')
             value.classList.remove('color')
@@ -842,12 +871,12 @@ document.addEventListener('mouseover',  e => {
 document.addEventListener('input', e => {
     const input = e.target.closest('[data-popup-search-input]');
 
-    if (input.value) {
+    if (input && input.value) {
         const wrapper = input.closest('[data-popup-search-section]');
         const itemsWrapper = wrapper.querySelector('[data-popup-search-items-wrapper]');
 
         itemsWrapper.classList.add('active')
-    } else {
+    } else if (input) {
         const wrapper = input.closest('[data-popup-search-section]');
         const itemsWrapper = wrapper.querySelector('[data-popup-search-items-wrapper]');
 
@@ -865,6 +894,39 @@ document.addEventListener('click', e => {
 
         input.value = item.textContent;
         itemsWrapper.classList.remove('active')
+    }
+})
+
+
+document.addEventListener('click', e => {
+    const item = e.target.closest('[data-clue-btn-close]');
+
+    if (item) {
+        const wrapper = item.closest('[data-clue-wrapper]');
+        const content = wrapper.querySelector('[data-clue-content]');
+
+        content.classList.remove('active')
+    }
+})
+
+document.addEventListener('click', e => {
+    if (!e.target.closest('.active[data-clue-content]')) {
+        const allActiveContents = document.querySelectorAll(' .active[data-clue-content]');
+
+        allActiveContents.forEach( item => {
+            item.classList.remove('active')
+        })
+    }
+})
+
+document.addEventListener('click', e => {
+    const item = e.target.closest('[data-clue-btn-open]');
+
+    if (item) {
+        const wrapper = item.closest('[data-clue-wrapper]');
+        const content = wrapper.querySelector('[data-clue-content]');
+
+        content.classList.add('active')
     }
 })
 
