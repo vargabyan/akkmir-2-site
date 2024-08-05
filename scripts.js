@@ -930,3 +930,26 @@ document.addEventListener('click', e => {
     }
 })
 
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-popup-map-switch-btn]');
+
+    if (btn) {
+        const btnID = btn.getAttribute('data-popup-map-switch-btn');
+        const wrapper = btn.closest('[data-popup-map-wrapper]');
+        const mapContent = wrapper.querySelector(`[data-popup-map-content="${btnID}"]`);
+        const allBtn = wrapper.querySelectorAll('.active[data-popup-map-switch-btn]');
+        const allMapContent = wrapper.querySelectorAll('.active[data-popup-map-content]');
+
+
+        allBtn.forEach( item => {
+            item.classList.remove('active');
+        });
+        allMapContent.forEach( item => {
+            item.classList.remove('active');
+        });
+        mapContent.classList.add('active');
+        btn.classList.add('active');
+    }
+})
+

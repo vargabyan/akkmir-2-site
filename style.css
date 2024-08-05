@@ -2686,7 +2686,11 @@ table {
     line-height: 140%;
 }
 
-.product-card_shop_delivery_content a {
+.product-card_shop_delivery_content button {
+    background-color: unset;
+    padding: 0;
+    border: none;
+    cursor: pointer;
     color: #38BB5A;
 }
 
@@ -3009,6 +3013,7 @@ table {
 
 .contacts_map_address {
     height: 100%;
+    width: 100%;
     overflow-y: auto;
     scrollbar-color: #38BB5A #CACACA;
     scrollbar-width: thin;
@@ -3094,6 +3099,110 @@ table {
     height: 571px;
     width: 100%;
 }
+
+[data-popup-wrapper="pick-up-points"] .popup-container {
+    gap: 14px;
+    padding: 60px 30px 60px 60px;
+}
+
+.contacts_map-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+[data-popup-wrapper="pick-up-points"] .contacts_map-content {
+    margin-top: 0;
+}
+
+.contacts_map_switch-btn-wrapper {
+    display: none;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contacts_map_switch-btn_item {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    cursor: pointer;
+
+    color: #343434;
+    font-family: Gilroy;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.contacts_map_switch-btn_item.active {
+    background: #F7F7F7;
+    box-shadow: none;
+    font-weight: 500;
+}
+
+[data-popup-wrapper="pick-up-points"] .contacts_map_address-wrapper {
+    border: solid 1px #939393;
+    border-radius: 20px;
+    max-width: 529px;
+}
+
+[data-popup-wrapper="pick-up-points"] .contacts_map {
+    border-radius: 20px;
+}
+
+[data-popup-wrapper="pick-up-points"] .contacts_map_address-wrapper.active,
+[data-popup-wrapper="pick-up-points"] .contacts_map.active {
+    display: flex;
+}
+
+[data-popup-wrapper="pick-up-points"] .contacts_map,
+[data-popup-wrapper="pick-up-points"] .contacts_map * {
+    max-width: 265px;
+}
+
+[data-popup-wrapper="pick-up-points"] .contacts_map.active,
+[data-popup-wrapper="pick-up-points"] .contacts_map.active * {
+    max-width: 100%;
+}
+
+[data-popup-wrapper="pick-up-points"] .contacts_map_address_item {
+    flex-direction: column;
+}
+
+.contacts_map_address_item_head {
+    display: flex;
+    gap: 15px;
+}
+
+.contacts_map_address_item_btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 15px;
+}
+
+.contacts_map_address_item_btn {
+    padding: 10px;
+    min-width: 220px;
+    min-height: 41px;
+}
+
+.contacts_map_address_item_availability {
+    color: #ADADAD;
+    font-family: Gilroy;
+    font-size: 14px;
+}
+
+.contacts_map_address_item_availability span {
+    color: #38BB5A;
+}.contacts_map_address_item_availability span.red {
+    color: #EA3F1A ;
+}
+
 
 
 .confidentiality {
@@ -4257,6 +4366,7 @@ table {
 .clue-content {
     top: 100%;
     position: absolute;
+    z-index: 9;
     width: 302px;
     display: none;
     padding: 12px ;
@@ -4886,6 +4996,35 @@ table {
     }
 
 
+    .contacts_map_switch-btn-wrapper {
+        display: flex;
+    }
+
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address-wrapper {
+        border: none;
+        padding: 0;
+    }
+
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address-wrapper,
+    [data-popup-wrapper="pick-up-points"] .contacts_map {
+        display: none;
+        max-width: 100%;
+    }
+
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address_item {
+       width: 100%;
+    }
+
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address {
+        height: unset;
+    }
+
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address_item {
+        border-radius: 11px;
+        border: 1px solid #939393;
+        background-color: unset;
+    }
+
 
 
 
@@ -4963,6 +5102,11 @@ table {
         display: flex;
     }
 
+
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address_item_img,
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address_item_grade-wrapper {
+        display: none;
+    }
 
 }
 
@@ -6287,11 +6431,27 @@ table {
         padding-left: 0;
     }
 
+    [data-popup-wrapper="pick-up-points"] .popup-container,
+    [data-popup-wrapper="pick-up-points"] .success-container,
     .popup-container,
     .success-container {
-        border-radius: 0;
         gap: 30px;
         padding: 20px 20px 40px 20px;
+    }
+
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address {
+        max-height: 64vh;
+    }
+
+    .contacts_map_address_item_btn {
+        min-width: 162px;
+        padding: 10px;
+        border-radius: 10px;
+        background: #38BB5A;
+
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 120%;
     }
 
     .popup-container .select-section_value {

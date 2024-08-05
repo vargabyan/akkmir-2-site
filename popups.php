@@ -30,6 +30,63 @@
 <!--</section>-->
 
 
+<section class="popup-wrapper" data-popup-wrapper="pick-up-points">
+    <div class="popup-container" data-popup-container>
+        <button type="button" class="popup_btn-close" data-popup-btn-close></button>
+        <h2 class="popup_header">
+            Наличие в пунктах выдачи
+        </h2>
+        <div class="contacts_map-content-wrapper" data-popup-map-wrapper>
+            <div class="contacts_map_switch-btn-wrapper">
+                <button class="contacts_map_switch-btn_item active" data-popup-map-switch-btn="items">Списком</button>
+                <button class="contacts_map_switch-btn_item" data-popup-map-switch-btn="map">На карте</button>
+            </div>
+            <div class="contacts_map-content">
+                <div class="contacts_map_address-wrapper active" data-popup-map-content="items">
+                    <div class="contacts_map_address">
+                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                            <div class="contacts_map_address_item">
+                                <div class="contacts_map_address_item_head">
+                                    <img class="contacts_map_address_item_img" src="/images/contacts-address-image-1.png" alt="image">
+                                    <div class="contacts_map_address_item_content">
+                                        <div class="contacts_map_address_item_grade-wrapper">
+                                            <?php foreach ([1,2,3,4,5] as $item_star) { ?>
+                                                <span class="contacts_map_address_item_stars_item active"></span>
+                                            <?php } ?>
+                                            <span class="contacts_map_address_item_grade">4.34</span>
+                                        </div>
+                                        <div class="contacts_map_address_item_address-wrapper">
+                                            <p>
+                                                Адрес:
+                                                <span>ул. Посадская, д 23 (м. Геологическая)</span>
+                                            </p>
+                                            <p>
+                                                Режим работы:
+                                                <span>Ежедневно с 10:00 до 21:00</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contacts_map_address_item_btn-wrapper">
+                                    <button class="contacts_map_address_item_btn btn-green">Оставить заявку</button>
+                                    <div class="contacts_map_address_item_availability">
+                                        Доступно:
+                                        <span>Мало</span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+                <div class="contacts_map" data-popup-map-content="map">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A95ddd0cff5f2d5f6586039c06523223ee7bdcaeda97b563191436cb74d569e22&amp;source=constructor" width="728" height="400" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="popup-wrapper active_" data-popup-wrapper="get-a-consultation">
     <form action="" class="popup-container active" data-popup-container>
         <button type="button" class="popup_btn-close" data-popup-btn-close></button>

@@ -155,7 +155,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                 <span class="product-card_shop_delivery_title">Доставка</span>
                 <div class="product-card_shop_delivery_content">
                     <span>Самовывоз:</span>
-                    <span>Сегодня из <a href="">3 пунктов выдачи</a></span>
+                    <span>Сегодня из <button data-order-popup="pick-up-points">3 пунктов выдачи</button></span>
                     <span>Доставка:</span>
                     <span>от 1 дня</span>
                 </div>
