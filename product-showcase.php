@@ -56,7 +56,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
                         </form>
                     </div>
                     <form action="" method="post" class="product-showcase_filter_params" data-product-showcase-filter-params>
-                        <div class="product-showcase_filter_params_content active" data-product-filter-content="car-model">
+                        <div class="product-showcase_filter_params_content" data-product-filter-content="battery-model">
                             <div class="select-section_wrapper-label">
                                 Бренд
                                 <div class="select-section" data-select-section>
@@ -245,7 +245,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
                                 </div>
                             </div>
                         </div>
-                        <div class="product-showcase_filter_params_content" data-product-filter-content="battery-model">
+                        <div class="product-showcase_filter_params_content active" data-product-filter-content="car-model">
                             <div class="select-section_wrapper-label">
                                 Выберите марку
                                 <div class="select-section" data-select-section>
