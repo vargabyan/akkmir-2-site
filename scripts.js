@@ -375,19 +375,27 @@ document.addEventListener('click', e => {
 })
 
 document.addEventListener('change', e => {
-    const btn = e.target.closest('[data-product-showcase-select-filter-params] input');
+    const btn = e.target.closest('[data-product-showcase-select-filter-params-label]');
 
     if (btn) {
+        const btnID = btn.getAttribute('data-product-showcase-select-filter-params-label');
         const wrapper = btn.closest('[data-product-showcase-select-filter-params]');
+        const btnInput = btn.querySelector('input');
         const allLabel = wrapper.querySelectorAll('[data-product-showcase-select-filter-params-label]');
+        const formContentWillBe = document.querySelector(`[data-product-filter-content="${btnID}"]`);
+        const formActiveContent = document.querySelectorAll('.active[data-product-filter-content]');
 
         allLabel.forEach( label => {
-            if (btn === label.querySelector('input:checked')) {
+            if (btnInput === label.querySelector('input:checked')) {
                 label.classList.add('active');
             } else {
                 label.classList.remove('active');
             }
-        })
+        });
+        formActiveContent.forEach( formContent => {
+            formContent.classList.remove('active');
+        });
+        formContentWillBe.classList.add('active');
     }
 })
 

@@ -45,201 +45,324 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
                     <div class="product-showcase_filter_title-wrapper">
                         <span class="product-showcase_links-menu-wrapper_title">Подбор АКБ</span>
                         <form action="" class="product-showcase_select-filter-params" data-product-showcase-select-filter-params>
-                            <label class="product-showcase_select-filter-params_label active" data-product-showcase-select-filter-params-label>
+                            <label class="product-showcase_select-filter-params_label active" data-product-showcase-select-filter-params-label="car-model">
                                 По марке авто
                                 <input type="radio" name="select-filter-params" checked value="По марке авто">
                             </label>
-                            <label class="product-showcase_select-filter-params_label" data-product-showcase-select-filter-params-label>
+                            <label class="product-showcase_select-filter-params_label" data-product-showcase-select-filter-params-label="battery-model">
                                 по меркам акб
                                 <input type="radio" name="select-filter-params" value="по меркам акб">
                             </label>
                         </form>
                     </div>
                     <form action="" method="post" class="product-showcase_filter_params" data-product-showcase-filter-params>
-                        <div class="select-section_wrapper-label">
-                            Бренд
-                            <div class="select-section" data-select-section>
-                                <span class="select-section_value" data-select-section-value>Выбрать</span>
-                                <div class="select-section_drop-menu" data-select-section-drop-menu>
-                                    <div class="select-section_item-wrapper">
-                                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                                            <label class="select-section_item_label">
-                                                <span>option <?= $item ?></span>
+                        <div class="product-showcase_filter_params_content active" data-product-filter-content="car-model">
+                            <div class="select-section_wrapper-label">
+                                Бренд
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    <span>option <?= $item ?></span>
 
-                                                <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
-                                            </label>
-                                        <?php } ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="select-slider-wrapper" data-select-slider-wrapper>
+                                Цена, в руб
+                                <div class="select-slider-_content">
+                                    <span class="select-slider_values" data-select-slider-value-min>0</span>
+                                    <div class="select-slider_container" data-select-slider-container>
+                                        <div class="select-slider_slider-track" data-select-slider-slider-track></div>
+                                        <label>
+                                            <input type="range" name="select-slider-min" min="0" step="10" max="500" value="20" data-select-slider-input-decrement>
+                                        </label>
+                                        <label>
+                                            <input type="range" name="select-slider-max" min="0" step="10" max="500" value="200" data-select-slider-input-increment>
+                                        </label>
+                                    </div>
+                                    <span class="select-slider_values" data-select-slider-value-max>100</span>
+                                </div>
+                            </div>
+
+                            <div class="select-section_wrapper-label">
+                                Гарантия
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="select-section_wrapper-label">
+                                Тип крепления
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="select-section_wrapper-label">
+                                Тип клемм
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="select-section_wrapper-label">
+                                Технология
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="select-slider-wrapper" data-select-slider-wrapper>
+                                Ёмкость (Ач)
+                                <div class="select-slider-_content">
+                                    <span class="select-slider_values" data-select-slider-value-min>0</span>
+                                    <div class="select-slider_container" data-select-slider-container>
+                                        <div class="select-slider_slider-track" data-select-slider-slider-track></div>
+                                        <label>
+                                            <input type="range" name="select-slider-min" min="0" step="10" max="500" value="20" data-select-slider-input-decrement>
+                                        </label>
+                                        <label>
+                                            <input type="range" name="select-slider-max" min="0" step="10" max="500" value="200" data-select-slider-input-increment>
+                                        </label>
+                                    </div>
+                                    <span class="select-slider_values" data-select-slider-value-max>100</span>
+                                </div>
+                            </div>
+
+                            <div class="select-slider-wrapper" data-select-slider-wrapper>
+                                Пусковой ток (А)
+                                <div class="select-slider-_content">
+                                    <span class="select-slider_values" data-select-slider-value-min>0</span>
+                                    <div class="select-slider_container" data-select-slider-container>
+                                        <div class="select-slider_slider-track" data-select-slider-slider-track></div>
+                                        <label>
+                                            <input type="range" name="select-slider-min" min="0" step="10" max="500" value="20" data-select-slider-input-decrement>
+                                        </label>
+                                        <label>
+                                            <input type="range" name="select-slider-max" min="0" step="10" max="500" value="200" data-select-slider-input-increment>
+                                        </label>
+                                    </div>
+                                    <span class="select-slider_values" data-select-slider-value-max>100</span>
+                                </div>
+                            </div>
+
+                            <div class="select-section_wrapper-label">
+                                Габариты (Д*Ш*В, мм)
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="select-section_wrapper-label">
+                                Полярность
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="select-section_wrapper-label">
+                                Напряжение (B)
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="product-showcase_filter_params_content" data-product-filter-content="battery-model">
+                            <div class="select-section_wrapper-label">
+                                Выберите марку
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    <span>option <?= $item ?></span>
 
-                        <div class="select-slider-wrapper" data-select-slider-wrapper>
-                            Цена, в руб
-                            <div class="select-slider-_content">
-                                <span class="select-slider_values" data-select-slider-value-min>0</span>
-                                <div class="select-slider_container" data-select-slider-container>
-                                    <div class="select-slider_slider-track" data-select-slider-slider-track></div>
-                                    <label>
-                                        <input type="range" name="select-slider-min" min="0" step="10" max="500" value="20" data-select-slider-input-decrement>
-                                    </label>
-                                    <label>
-                                        <input type="range" name="select-slider-max" min="0" step="10" max="500" value="200" data-select-slider-input-increment>
-                                    </label>
-                                </div>
-                                <span class="select-slider_values" data-select-slider-value-max>100</span>
-                            </div>
-                        </div>
-
-                        <div class="select-section_wrapper-label">
-                            Гарантия
-                            <div class="select-section" data-select-section>
-                                <span class="select-section_value" data-select-section-value>Выбрать</span>
-                                <div class="select-section_drop-menu" data-select-section-drop-menu>
-                                    <div class="select-section_item-wrapper">
-                                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                                            <label class="select-section_item_label">
-                                                option <?= $item ?>
-                                                <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
-                                            </label>
-                                        <?php } ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="select-section_wrapper-label">
-                            Тип крепления
-                            <div class="select-section" data-select-section>
-                                <span class="select-section_value" data-select-section-value>Выбрать</span>
-                                <div class="select-section_drop-menu" data-select-section-drop-menu>
-                                    <div class="select-section_item-wrapper">
-                                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                                            <label class="select-section_item_label">
-                                                option <?= $item ?>
-                                                <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
-                                            </label>
-                                        <?php } ?>
+                            <div class="select-slider-wrapper" data-select-slider-wrapper>
+                                Цена, в руб
+                                <div class="select-slider-_content">
+                                    <span class="select-slider_values" data-select-slider-value-min>0</span>
+                                    <div class="select-slider_container" data-select-slider-container>
+                                        <div class="select-slider_slider-track" data-select-slider-slider-track></div>
+                                        <label>
+                                            <input type="range" name="select-slider-min" min="0" step="10" max="500" value="20" data-select-slider-input-decrement>
+                                        </label>
+                                        <label>
+                                            <input type="range" name="select-slider-max" min="0" step="10" max="500" value="200" data-select-slider-input-increment>
+                                        </label>
+                                    </div>
+                                    <span class="select-slider_values" data-select-slider-value-max>100</span>
+                                </div>
+                            </div>
+
+                            <div class="select-section_wrapper-label">
+                                Модель
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="select-section_wrapper-label">
-                            Тип клемм
-                            <div class="select-section" data-select-section>
-                                <span class="select-section_value" data-select-section-value>Выбрать</span>
-                                <div class="select-section_drop-menu" data-select-section-drop-menu>
-                                    <div class="select-section_item-wrapper">
-                                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                                            <label class="select-section_item_label">
-                                                option <?= $item ?>
-                                                <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
-                                            </label>
-                                        <?php } ?>
+                            <div class="select-section_wrapper-label">
+                                Поколение
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="select-section_wrapper-label">
-                            Технология
-                            <div class="select-section" data-select-section>
-                                <span class="select-section_value" data-select-section-value>Выбрать</span>
-                                <div class="select-section_drop-menu" data-select-section-drop-menu>
-                                    <div class="select-section_item-wrapper">
-                                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                                            <label class="select-section_item_label">
-                                                option <?= $item ?>
-                                                <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
-                                            </label>
-                                        <?php } ?>
+                            <div class="select-section_wrapper-label">
+                                Двигатель
+                                <div class="select-section" data-select-section>
+                                    <span class="select-section_value" data-select-section-value>Выбрать</span>
+                                    <div class="select-section_drop-menu" data-select-section-drop-menu>
+                                        <div class="select-section_item-wrapper">
+                                            <?php foreach ([1,2,3,4,5,6] as $item) { ?>
+                                                <label class="select-section_item_label">
+                                                    option <?= $item ?>
+                                                    <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
+                                                </label>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="select-slider-wrapper" data-select-slider-wrapper>
-                            Цена, в руб
-                            <div class="select-slider-_content">
-                                <span class="select-slider_values" data-select-slider-value-min>0</span>
-                                <div class="select-slider_container" data-select-slider-container>
-                                    <div class="select-slider_slider-track" data-select-slider-slider-track></div>
-                                    <label>
-                                        <input type="range" name="select-slider-min" min="0" step="10" max="500" value="20" data-select-slider-input-decrement>
-                                    </label>
-                                    <label>
-                                        <input type="range" name="select-slider-max" min="0" step="10" max="500" value="200" data-select-slider-input-increment>
-                                    </label>
-                                </div>
-                                <span class="select-slider_values" data-select-slider-value-max>100</span>
-                            </div>
-                        </div>
-
-                        <div class="select-slider-wrapper" data-select-slider-wrapper>
-                            Цена, в руб
-                            <div class="select-slider-_content">
-                                <span class="select-slider_values" data-select-slider-value-min>0</span>
-                                <div class="select-slider_container" data-select-slider-container>
-                                    <div class="select-slider_slider-track" data-select-slider-slider-track></div>
-                                    <label>
-                                        <input type="range" name="select-slider-min" min="0" step="10" max="500" value="20" data-select-slider-input-decrement>
-                                    </label>
-                                    <label>
-                                        <input type="range" name="select-slider-max" min="0" step="10" max="500" value="200" data-select-slider-input-increment>
-                                    </label>
-                                </div>
-                                <span class="select-slider_values" data-select-slider-value-max>100</span>
-                            </div>
-                        </div>
-
-                        <div class="select-section_wrapper-label">
-                            Габариты (Д*Ш*В, мм)
-                            <div class="select-section" data-select-section>
-                                <span class="select-section_value" data-select-section-value>Выбрать</span>
-                                <div class="select-section_drop-menu" data-select-section-drop-menu>
-                                    <div class="select-section_item-wrapper">
-                                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                                            <label class="select-section_item_label">
-                                                option <?= $item ?>
-                                                <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
-                                            </label>
-                                        <?php } ?>
+                            <div class="select-slider-wrapper" data-select-slider-wrapper>
+                                Ёмкость (Ач)
+                                <div class="select-slider-_content">
+                                    <span class="select-slider_values" data-select-slider-value-min>0</span>
+                                    <div class="select-slider_container" data-select-slider-container>
+                                        <div class="select-slider_slider-track" data-select-slider-slider-track></div>
+                                        <label>
+                                            <input type="range" name="select-slider-min" min="0" step="10" max="500" value="20" data-select-slider-input-decrement>
+                                        </label>
+                                        <label>
+                                            <input type="range" name="select-slider-max" min="0" step="10" max="500" value="200" data-select-slider-input-increment>
+                                        </label>
                                     </div>
+                                    <span class="select-slider_values" data-select-slider-value-max>100</span>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="select-section_wrapper-label">
-                            Полярность
-                            <div class="select-section" data-select-section>
-                                <span class="select-section_value" data-select-section-value>Выбрать</span>
-                                <div class="select-section_drop-menu" data-select-section-drop-menu>
-                                    <div class="select-section_item-wrapper">
-                                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                                            <label class="select-section_item_label">
-                                                option <?= $item ?>
-                                                <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
-                                            </label>
-                                        <?php } ?>
+                            <div class="select-slider-wrapper" data-select-slider-wrapper>
+                                Пусковой ток (А)
+                                <div class="select-slider-_content">
+                                    <span class="select-slider_values" data-select-slider-value-min>0</span>
+                                    <div class="select-slider_container" data-select-slider-container>
+                                        <div class="select-slider_slider-track" data-select-slider-slider-track></div>
+                                        <label>
+                                            <input type="range" name="select-slider-min" min="0" step="10" max="500" value="20" data-select-slider-input-decrement>
+                                        </label>
+                                        <label>
+                                            <input type="range" name="select-slider-max" min="0" step="10" max="500" value="200" data-select-slider-input-increment>
+                                        </label>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="select-section_wrapper-label">
-                            Напряжение (B)
-                            <div class="select-section" data-select-section>
-                                <span class="select-section_value" data-select-section-value>Выбрать</span>
-                                <div class="select-section_drop-menu" data-select-section-drop-menu>
-                                    <div class="select-section_item-wrapper">
-                                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                                            <label class="select-section_item_label">
-                                                option <?= $item ?>
-                                                <input type="radio" value="option <?= $item ?>" name="select" data-select-section-item>
-                                            </label>
-                                        <?php } ?>
-                                    </div>
+                                    <span class="select-slider_values" data-select-slider-value-max>100</span>
                                 </div>
                             </div>
                         </div>

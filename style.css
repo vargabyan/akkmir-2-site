@@ -984,6 +984,7 @@ table {
 }
 
 .popular-goods_item {
+    max-width: 460px;
     position: relative;
     display: flex;
     padding: 20px;
@@ -1844,6 +1845,16 @@ table {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.product-showcase_filter_params_content {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-showcase_filter_params_content.active {
+    display: flex;
 }
 
 .product-showcase_select-filter-params {
@@ -5106,6 +5117,11 @@ table {
     [data-popup-wrapper="pick-up-points"] .contacts_map_address_item_img,
     [data-popup-wrapper="pick-up-points"] .contacts_map_address_item_grade-wrapper {
         display: none;
+    }
+
+
+    .popular-goods_item {
+        max-width: 100%;
     }
 
 }
