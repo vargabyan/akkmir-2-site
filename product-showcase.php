@@ -405,7 +405,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог'], ['url' => '',
                             </div>
                             <div class="popular-goods_item_in-stock">
                                 В наличии в
-                                <a href=""> 12 пунктах выдачи заказов</a>
+                                <button data-order-popup="pick-up-points"> 12 пунктах выдачи заказов</button>
                             </div>
                             <div class="popular-goods_item_btn-wrapper">
                                 <button class="btn-green" data-order-popup="Buy-in-one-click">Купить в 1 клик</button>
