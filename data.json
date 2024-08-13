@@ -1,0 +1,10 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type": "Feature", "id": 0, "geometry": {"type": "Point", "coordinates": [56.874774067833535,60.55528049999995]}, "properties": {"coordinatesForBalloon": [56.874774067833535,60.55528049999995],"tel": "+7 343 261-62-62", "city": "Екатеринбург", "address": "Автомагистральная, 33а", "workHours": "Ежедневно с 09:00 до 21:00"}},
+    {"type": "Feature", "id": 1, "geometry": {"type": "Point", "coordinates": [56.79402106792766,60.503348999999986]}, "properties": {"coordinatesForBalloon": [56.79402106792766,60.503348999999986],"tel": "+7 343 261-62-62", "city": "Екатеринбург", "address": "Рябинина, 32/5", "workHours": "Ежедневно с 09:00 до 21:00"}},
+    {"type": "Feature", "id": 3, "geometry": {"type": "Point", "coordinates": [56.85959106785485,60.663177499999996]}, "properties": {"coordinatesForBalloon": [56.85959106785485,60.663177499999996],"tel": "+7 343 261-62-62", "city": "Екатеринбург", "address": "Раевского, 9/1", "workHours": "Ежедневно с 09:00 до 21:00"}},
+    {"type": "Feature", "id": 4, "geometry": {"type": "Point", "coordinates": [56.77223106793196,60.59987300000003]}, "properties": {"coordinatesForBalloon": [56.77223106793196,60.59987300000003],"tel": "+7 343 261-62-62", "city": "Екатеринбург", "address": "Патриса Лумумбы, 4в", "workHours": "Ежедневно с 09:00 до 21:00"}},
+    {"type": "Feature", "id": 5, "geometry": {"type": "Point", "coordinates": [56.870592567852945,60.671477499999945]}, "properties": {"coordinatesForBalloon": [56.870592567852945,60.671477499999945],"tel": "+7 343 261-62-62", "city": "Екатеринбург", "address": "Аппаратная, 5", "workHours": "Ежедневно с 09:00 до 21:00"}}
+  ]
+}

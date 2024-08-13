@@ -961,3 +961,18 @@ document.addEventListener('click', e => {
     }
 })
 
+
+document.addEventListener('click',  e => {
+    const item = e.target.closest('[data-map-contacts-item]')
+
+    if (item) {
+        const wrapper = item.closest('[data-map-contacts-item-wrapper]');
+        const allItems = wrapper.querySelectorAll('.active[data-map-contacts-item]');
+
+        allItems.forEach(eachItem => {
+            eachItem.classList.remove('active');
+        })
+        item.classList.add('active');
+    }
+});
+

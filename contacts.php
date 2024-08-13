@@ -6,6 +6,12 @@ breadcrumb([['url' => '', 'name' => 'Контакты']]);
 ?>
 
 
+<?php
+$data = file_get_contents('data.json');
+$data_contacts_item = json_decode($data, true);
+?>
+
+
 <section class="core-container contacts">
     <h1 class="contacts_header site-header">Контакты</h1>
     <div class="contacts_item-wrapper">
@@ -34,25 +40,27 @@ breadcrumb([['url' => '', 'name' => 'Контакты']]);
     </div>
     <div class="contacts_map-content">
         <div class="contacts_map_address-wrapper">
-            <div class="contacts_map_address">
-                <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                    <div class="contacts_map_address_item">
+            <div class="contacts_map_address" data-map-contacts-item-wrapper>
+                <?php foreach ($data_contacts_item['features'] as $item) { ?>
+                    <div class="contacts_map_address_item" data-map-contacts-item="<?= $item['id'] ?>">
                         <img class="contacts_map_address_item_img" src="/images/contacts-address-image-1.png" alt="image">
                         <div class="contacts_map_address_item_content">
                             <div class="contacts_map_address_item_grade-wrapper">
-                                <?php foreach ([1,2,3,4,5] as $item_star) { ?>
                                     <span class="contacts_map_address_item_stars_item active"></span>
-                                <?php } ?>
+                                    <span class="contacts_map_address_item_stars_item active"></span>
+                                    <span class="contacts_map_address_item_stars_item active"></span>
+                                    <span class="contacts_map_address_item_stars_item active"></span>
+                                    <span class="contacts_map_address_item_stars_item active"></span>
                                 <span class="contacts_map_address_item_grade">4.34</span>
                             </div>
                             <div class="contacts_map_address_item_address-wrapper">
                                 <p>
                                     Адрес:
-                                    <span>ул. Посадская, д 23 (м. Геологическая)</span>
+                                    <span><?= $item['properties']['city'] ?> <?= $item['properties']['address'] ?></span>
                                 </p>
                                 <p>
                                     Режим работы:
-                                    <span>Ежедневно с 10:00 до 21:00</span>
+                                    <span><?= $item['properties']['workHours'] ?></span>
                                 </p>
                             </div>
                         </div>
@@ -61,7 +69,7 @@ breadcrumb([['url' => '', 'name' => 'Контакты']]);
             </div>
         </div>
         <div class="contacts_map">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A95ddd0cff5f2d5f6586039c06523223ee7bdcaeda97b563191436cb74d569e22&amp;source=constructor" width="728" height="400" frameborder="0"></iframe>
+            <div class="map" id="map"></div>
         </div>
     </div>
 </section>

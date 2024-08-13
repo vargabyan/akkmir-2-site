@@ -144,7 +144,7 @@ breadcrumb([['url' => '/catalog.php', 'name' => 'Каталог']]);
                 </div>
                 <div class="product-card_shop_in-stock">
                     В наличии в
-                    <a href="">12 пунктах выдачи заказов</a>
+                    <button type="button" data-order-popup="pick-up-points">12 пунктах выдачи заказов</button>
                 </div>
                 <div class="product-card_shop_btn-wrapper">
                     <button class="product-card_shop_btn_add-basket btn-green">Добавить в корзину</button>
@@ -423,7 +423,7 @@ $response_data_reviews = [
                                 </div>
                                 <div class="popular-goods_item_in-stock">
                                     В наличии в
-                                    <a href=""> 12 пунктах выдачи заказов</a>
+                                    <button data-order-popup="pick-up-points"> 12 пунктах выдачи заказов</button>
                                 </div>
                                 <div class="popular-goods_item_btn-wrapper">
                                     <button class="btn-green" data-order-popup="Buy-in-one-click">Купить в 1 клик</button>

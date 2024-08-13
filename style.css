@@ -1138,9 +1138,14 @@ table {
     background: #38BB5A;
 }
 
-.popular-goods_item_in-stock a {
+.popular-goods_item_in-stock button {
+    border: none;
+    margin: 0;
+    background-color: unset;
+    cursor: pointer;
     z-index: 2;
     color: #38BB5A;
+    text-decoration-line: underline;
 }
 
 .popular-goods_item_btn-wrapper {
@@ -2624,8 +2629,13 @@ table {
     font-weight: 500;
 }
 
-.product-card_shop_in-stock a {
+.product-card_shop_in-stock button {
+    border: none;
+    margin: 0;
+    background-color: unset;
     color: #38BB5A;
+    text-decoration-line: underline;
+    cursor: pointer;
 }
 
 .product-card_shop_in-stock:before {
@@ -3043,6 +3053,10 @@ table {
     cursor: pointer;
 }
 
+.contacts_map_address_item.active {
+    border: solid 1px #38BB5A;
+}
+
 .contacts_map_address_item_img {
     width: 108px;
     height: 108px;
@@ -3106,15 +3120,76 @@ table {
     background:  lightgray 50% / cover no-repeat;
 }
 
-.contacts_map, .contacts_map * {
+.contacts_map, .map {
     height: 571px;
     width: 100%;
+}
+
+[class*="balloon"] {
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+}
+
+#controls {
+    width: 100%;
+    height: 10%;
+    padding: 10px;
+}
+
+[class*="balloon__content"] {
+    margin-right: 20px !important;
 }
 
 [data-popup-wrapper="pick-up-points"] .popup-container {
     gap: 14px;
     padding: 60px 30px 60px 60px;
 }
+
+.map-marker_description {
+    max-width: 343px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px #939393;
+    background: #FFF;
+}
+
+.map-marker_description_title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #ADADAD;
+    font-family: Gilroy;
+    font-size: 14px;
+}
+
+.map-marker_description_title span {
+    color: #343434;
+    font-family: Bicubik;
+    font-size: 12px;
+}
+
+.map-marker_description_tel {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: #343434;
+    font-family: Bicubik;
+    font-size: 12px;
+}
+
+.map-marker_description_tel:before {
+    display: block;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M10.6147 13.3834C12.3962 15.1634 14.4601 16.8668 15.276 16.0511C16.443 14.8844 17.1632 13.8672 19.738 15.9364C22.3117 18.0043 20.3344 19.3837 19.2035 20.5134C17.898 21.8185 13.032 20.5831 8.22224 15.7755C3.4136 10.9667 2.18133 6.1016 3.48787 4.79645C4.61885 3.66458 5.99179 1.68885 8.06019 4.26202C10.1297 6.83519 9.11352 7.55527 7.94428 8.72315C7.13177 9.53887 8.83444 11.6024 10.6147 13.3834Z' fill='%2338BB5A'/%3E%3C/svg%3E");
+}
+
 
 .contacts_map-content-wrapper {
     display: flex;
@@ -3171,12 +3246,12 @@ table {
 }
 
 [data-popup-wrapper="pick-up-points"] .contacts_map,
-[data-popup-wrapper="pick-up-points"] .contacts_map * {
-    max-width: 265px;
+[data-popup-wrapper="pick-up-points"] .contacts_map .map {
+    max-width: 300px;
 }
 
 [data-popup-wrapper="pick-up-points"] .contacts_map.active,
-[data-popup-wrapper="pick-up-points"] .contacts_map.active * {
+[data-popup-wrapper="pick-up-points"] .contacts_map.active .map {
     max-width: 100%;
 }
 
@@ -5022,6 +5097,10 @@ table {
         max-width: 100%;
     }
 
+    [data-popup-wrapper="pick-up-points"] .contacts_map .map {
+        width: 100%;
+    }
+
     [data-popup-wrapper="pick-up-points"] .contacts_map_address_item {
        width: 100%;
     }
@@ -5034,6 +5113,10 @@ table {
         border-radius: 11px;
         border: 1px solid #939393;
         background-color: unset;
+    }
+
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address_item.active {
+        border: solid 1px #38BB5A;
     }
 
 
@@ -6209,7 +6292,7 @@ table {
         line-height: 24px;
     }
 
-    .contacts_map, .contacts_map * {
+    .contacts_map, .contacts_map {
         height: 475px;
     }
 

@@ -65,7 +65,9 @@
 
 <?php require 'popups.php'; ?>
 
-
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+<script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+<script src="map-script.js"></script>
 <script src="swiper-bundle.min.js"></script>
 <script src="fancybox.umd.js"></script>
 <script src="scripts.js"></script>

@@ -29,6 +29,10 @@
 <!--    </div>-->
 <!--</section>-->
 
+<?php
+$data = file_get_contents('data.json');
+$data_contacts_item = json_decode($data, true);
+?>
 
 <section class="popup-wrapper" data-popup-wrapper="pick-up-points">
     <div class="popup-container" data-popup-container>
@@ -43,32 +47,34 @@
             </div>
             <div class="contacts_map-content">
                 <div class="contacts_map_address-wrapper active" data-popup-map-content="items">
-                    <div class="contacts_map_address">
-                        <?php foreach ([1,2,3,4,5,6] as $item) { ?>
-                            <div class="contacts_map_address_item">
+                    <div class="contacts_map_address" data-map-contacts-item-wrapper>
+                        <?php foreach ($data_contacts_item['features'] as $item) { ?>
+                            <div class="contacts_map_address_item" data-map-contacts-item="<?= $item['id'] ?>">
                                 <div class="contacts_map_address_item_head">
                                     <img class="contacts_map_address_item_img" src="/images/contacts-address-image-1.png" alt="image">
                                     <div class="contacts_map_address_item_content">
                                         <div class="contacts_map_address_item_grade-wrapper">
-                                            <?php foreach ([1,2,3,4,5] as $item_star) { ?>
                                                 <span class="contacts_map_address_item_stars_item active"></span>
-                                            <?php } ?>
+                                                <span class="contacts_map_address_item_stars_item active"></span>
+                                                <span class="contacts_map_address_item_stars_item active"></span>
+                                                <span class="contacts_map_address_item_stars_item active"></span>
+                                                <span class="contacts_map_address_item_stars_item active"></span>
                                             <span class="contacts_map_address_item_grade">4.34</span>
                                         </div>
                                         <div class="contacts_map_address_item_address-wrapper">
                                             <p>
                                                 Адрес:
-                                                <span>ул. Посадская, д 23 (м. Геологическая)</span>
+                                                <span><?= $item['properties']['city'] ?> <?= $item['properties']['address'] ?></span>
                                             </p>
                                             <p>
                                                 Режим работы:
-                                                <span>Ежедневно с 10:00 до 21:00</span>
+                                                <span><?= $item['properties']['workHours'] ?></span>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="contacts_map_address_item_btn-wrapper">
-                                    <button class="contacts_map_address_item_btn btn-green">Оставить заявку</button>
+                                    <button class="contacts_map_address_item_btn btn-green" data-order-popup="get-a-consultation">Оставить заявку</button>
                                     <div class="contacts_map_address_item_availability">
                                         Доступно:
                                         <span>Мало</span>
@@ -79,7 +85,7 @@
                     </div>
                 </div>
                 <div class="contacts_map" data-popup-map-content="map">
-                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A95ddd0cff5f2d5f6586039c06523223ee7bdcaeda97b563191436cb74d569e22&amp;source=constructor" width="728" height="400" frameborder="0"></iframe>
+                    <div class="map" id="map"></div>
                 </div>
             </div>
         </div>
@@ -87,7 +93,7 @@
 </section>
 
 
-<section class="popup-wrapper active_" data-popup-wrapper="get-a-consultation">
+<section class="popup-wrapper" data-popup-wrapper="get-a-consultation">
     <form action="" class="popup-container active" data-popup-container>
         <button type="button" class="popup_btn-close" data-popup-btn-close></button>
         <h2 class="popup_header">
