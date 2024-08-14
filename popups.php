@@ -42,11 +42,11 @@ $data_contacts_item = json_decode($data, true);
         </h2>
         <div class="contacts_map-content-wrapper" data-popup-map-wrapper>
             <div class="contacts_map_switch-btn-wrapper">
-                <button class="contacts_map_switch-btn_item active" data-popup-map-switch-btn="items">Списком</button>
-                <button class="contacts_map_switch-btn_item" data-popup-map-switch-btn="map">На карте</button>
+                <button class="contacts_map_switch-btn_item" data-popup-map-switch-btn="items">Списком</button>
+                <button class="contacts_map_switch-btn_item active" data-popup-map-switch-btn="map">На карте</button>
             </div>
             <div class="contacts_map-content">
-                <div class="contacts_map_address-wrapper active" data-popup-map-content="items">
+                <div class="contacts_map_address-wrapper" data-popup-map-content="items">
                     <div class="contacts_map_address" data-map-contacts-item-wrapper>
                         <?php foreach ($data_contacts_item['features'] as $item) { ?>
                             <div class="contacts_map_address_item" data-map-contacts-item="<?= $item['id'] ?>">
@@ -84,8 +84,44 @@ $data_contacts_item = json_decode($data, true);
                         <?php } ?>
                     </div>
                 </div>
-                <div class="contacts_map" data-popup-map-content="map">
-                    <div class="map" id="map"></div>
+                <div class="contacts_map-wrapper active" data-popup-map-content="map">
+                    <div class="contacts_map">
+                        <div class="map" id="map"></div>
+                    </div>
+                    <?php foreach ($data_contacts_item['features'] as $item) { ?>
+                        <div class="contacts_map_address_item" data-map-under-contacts-item="<?= $item['id'] ?>">
+                            <div class="contacts_map_address_item_head">
+                                <img class="contacts_map_address_item_img" src="/images/contacts-address-image-1.png" alt="image">
+                                <div class="contacts_map_address_item_content">
+                                    <div class="contacts_map_address_item_grade-wrapper">
+                                        <span class="contacts_map_address_item_stars_item active"></span>
+                                        <span class="contacts_map_address_item_stars_item active"></span>
+                                        <span class="contacts_map_address_item_stars_item active"></span>
+                                        <span class="contacts_map_address_item_stars_item active"></span>
+                                        <span class="contacts_map_address_item_stars_item active"></span>
+                                        <span class="contacts_map_address_item_grade">4.34</span>
+                                    </div>
+                                    <div class="contacts_map_address_item_address-wrapper">
+                                        <p>
+                                            Адрес:
+                                            <span><?= $item['properties']['city'] ?> <?= $item['properties']['address'] ?></span>
+                                        </p>
+                                        <p>
+                                            Режим работы:
+                                            <span><?= $item['properties']['workHours'] ?></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacts_map_address_item_btn-wrapper">
+                                <button class="contacts_map_address_item_btn btn-green" data-order-popup="get-a-consultation">Оставить заявку</button>
+                                <div class="contacts_map_address_item_availability">
+                                    Доступно:
+                                    <span>Мало</span>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

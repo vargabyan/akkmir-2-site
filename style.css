@@ -3213,11 +3213,10 @@ table {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    background: #FFF;
-    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.12);
+    background: #F7F7F7;
     border: none;
     cursor: pointer;
-
+    box-shadow: none;
     color: #343434;
     font-family: Gilroy;
     font-size: 14px;
@@ -3225,8 +3224,8 @@ table {
 }
 
 .contacts_map_switch-btn_item.active {
-    background: #F7F7F7;
-    box-shadow: none;
+    background: #FFF;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.12);
     font-weight: 500;
 }
 
@@ -3236,11 +3235,27 @@ table {
     max-width: 529px;
 }
 
+[data-popup-wrapper="pick-up-points"] .contacts_map-wrapper {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+}
+
+[data-popup-wrapper="pick-up-points"] .contacts_map-wrapper .contacts_map_address_item {
+    display: none;
+}
+
+[data-popup-wrapper="pick-up-points"] .contacts_map-wrapper .contacts_map_address_item.active {
+    display: flex;
+    border: solid 1px #939393;
+}
+
 [data-popup-wrapper="pick-up-points"] .contacts_map {
     border-radius: 20px;
 }
 
 [data-popup-wrapper="pick-up-points"] .contacts_map_address-wrapper.active,
+[data-popup-wrapper="pick-up-points"] .contacts_map-wrapper.active,
 [data-popup-wrapper="pick-up-points"] .contacts_map.active {
     display: flex;
 }
@@ -3248,11 +3263,6 @@ table {
 [data-popup-wrapper="pick-up-points"] .contacts_map,
 [data-popup-wrapper="pick-up-points"] .contacts_map .map {
     max-width: 300px;
-}
-
-[data-popup-wrapper="pick-up-points"] .contacts_map.active,
-[data-popup-wrapper="pick-up-points"] .contacts_map.active .map {
-    max-width: 100%;
 }
 
 [data-popup-wrapper="pick-up-points"] .contacts_map_address_item {
@@ -4986,6 +4996,7 @@ table {
 
 
     .catalog {
+        grid-template-rows: max-content 1fr 313px 313px;
         grid-template-areas:
             'A A'
             'D D'
@@ -5092,13 +5103,15 @@ table {
     }
 
     [data-popup-wrapper="pick-up-points"] .contacts_map_address-wrapper,
-    [data-popup-wrapper="pick-up-points"] .contacts_map {
+    [data-popup-wrapper="pick-up-points"] .contacts_map-wrapper {
         display: none;
         max-width: 100%;
     }
 
+    [data-popup-wrapper="pick-up-points"] .contacts_map,
     [data-popup-wrapper="pick-up-points"] .contacts_map .map {
         width: 100%;
+        max-width: 100%;
     }
 
     [data-popup-wrapper="pick-up-points"] .contacts_map_address_item {
@@ -5197,8 +5210,7 @@ table {
     }
 
 
-    [data-popup-wrapper="pick-up-points"] .contacts_map_address_item_img,
-    [data-popup-wrapper="pick-up-points"] .contacts_map_address_item_grade-wrapper {
+    [data-popup-wrapper="pick-up-points"] .contacts_map_address_item_img {
         display: none;
     }
 
@@ -6268,7 +6280,7 @@ table {
 
     .contacts_map_address_item {
         flex-direction: column;
-        padding: 14px 14px 28px 14px;
+        padding: 14px;
         gap: 14px;
     }
 
@@ -6280,7 +6292,7 @@ table {
     .contacts_map_address_item_content {
         flex-direction: column;
         align-items: self-start;
-        gap: 20px;
+        gap: 8px;
     }
 
     .contacts_map_address_item_address-wrapper {
@@ -6292,8 +6304,17 @@ table {
         line-height: 24px;
     }
 
-    .contacts_map, .contacts_map {
+    [data-popup-wrapper="pick-up-points"] .contacts_map {
+        height: 298px;
+    }
+
+    .contacts_map {
         height: 475px;
+    }
+
+    .contacts_map_address_item_btn-wrapper {
+        flex-direction: column-reverse;
+        align-items: baseline;
     }
 
 

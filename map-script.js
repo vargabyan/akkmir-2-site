@@ -60,8 +60,12 @@ function init() {
         const objectId = e.get('objectId');
         const currentMarker = objectManager.objects.getById(objectId);
         const allItems = document.querySelectorAll('[data-map-contacts-item]');
+        const allUnderMapItems = document.querySelectorAll('[data-map-under-contacts-item]');
 
         allItems.forEach(eachItem => {
+            eachItem.classList.remove('active');
+        })
+        allUnderMapItems.forEach(eachItem => {
             eachItem.classList.remove('active');
         })
 
@@ -69,6 +73,10 @@ function init() {
         const item = document.querySelector(`[data-map-contacts-item="${currentMarker.id}"]`);
         item.classList.add('active');
         wrapper.scrollTo({left: 0, top: item.offsetTop - wrapper.offsetTop, behavior: 'smooth'});
+
+        if (document.querySelector(`[data-map-under-contacts-item="${currentMarker.id}"]`)) {
+            document.querySelector(`[data-map-under-contacts-item="${currentMarker.id}"]`).classList.add('active');
+        }
     });
 
     document.addEventListener('click', e => {
@@ -76,8 +84,27 @@ function init() {
 
         if (item) {
             const address = item.getAttribute('data-map-contacts-item');
-
             let found = false;
+
+            if (window.innerWidth < 992 && document.querySelector('[data-popup-map-content]')) {
+                const map = document.querySelector('[data-popup-map-content="map"]')
+                const items = document.querySelector('[data-popup-map-content="items"]')
+                const BtnItems = document.querySelector('[data-popup-map-switch-btn="items"]')
+                const BtnMap = document.querySelector('[data-popup-map-switch-btn="map"]')
+
+                items.classList.remove('active')
+                BtnItems.classList.remove('active')
+                map.classList.add('active')
+                BtnMap.classList.add('active')
+
+                const allUnderMapItems = document.querySelectorAll('[data-map-under-contacts-item]');
+
+                allUnderMapItems.forEach(eachItem => {
+                    eachItem.classList.remove('active');
+                })
+                document.querySelector(`[data-map-under-contacts-item="${address}"]`).classList.add('active');
+            }
+
             objectManager.objects.each(function(object) {
                 if (address) {
                     coreMap.setCenter(object.geometry.coordinates, 12);
