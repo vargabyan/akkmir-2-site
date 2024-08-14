@@ -107,6 +107,7 @@ function init() {
 
             objectManager.objects.each(function(object) {
                 if (address) {
+                    const center = coreMap.getCenter();
                     coreMap.setCenter(object.geometry.coordinates, 12);
                     objectManager.objects.balloon.open(address);
                     found = true;
